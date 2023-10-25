@@ -1,0 +1,2200 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0">
+    <meta name="Author" content="nhk-school">
+    <meta name="Keywords" content="nhk-school">
+    <meta name="Description" content="nhk-school">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+<title>nhk-school</title>
+
+<body>
+    <!-- e_0201 チュートリアル_Nチャット（再表示） -->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1810-42061&mode=dev -->
+    <div class="modal fade" id="tutorialHome" tabindex="-1" aria-labelledby="tutorialHomeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-wrap="false" data-interval="false">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div id="carousel-inner" class="carousel-inner">
+                          
+                        </div>
+                        <div class="carousel-inner-text">
+                            <div id="inner_text_title" class="inner_text_title">
+                                <!-- ご入学おめでとうございます！ -->
+                            </div>
+                            <div id="inner_text_content" class="inner_text_content">
+                                <!-- ご入学おめでとうございます。楽しく学習していきましょう！
+                                学習ポータルで勉強をするにあたり、、、 -->
+                            </div>
+                        </div>
+                        <button id="carouselBack" class="btn btn-primary" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            戻る
+                        </button>
+                        <button id="carouselNext" class="btn btn-primary" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            次へ
+                        </button>
+                        <button id="carouselEnter" class="btn btn-primary btn_enter" type="button" 
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            ホームルームに入る
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- e_0201 チュートリアル_Nチャット（再表示） end -->
+
+    <!-- e_0101 ネット特別活動・予定一覧 -->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?node-id=516%3A4443&mode=dev -->
+    <div class="modal fade" id="eventBooking" tabindex="-1" aria-labelledby="eventBookingLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    オンラインサポート・ネット特別活動予定一覧
+                    <button type="button" class="btn-close active_close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div id="ngaku_Inp_all_plan_contents" class="modal-body">
+                    <div class="active_filter d-flex align-items-center" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                        <span>フィルター</span> <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div id="active_item_labels" class="active_item_labels margin_bottom--6">
+
+                    </div>
+
+                    <!-- ネット特別活動の予定はありません。 start  -->
+                    <div class="active_item_none display_none" style="display:none">
+                        <div class="item_none_text">
+                            現在、オンラインサポート・ネット特別活動の予定はありません。<br><br>
+                            予定が入り次第、こちらに掲載されます。
+                        </div>
+                        <div class="item_none_img d-flex justify-content-center">
+                            <img src="./asset/EmptyStateImage.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- ネット特別活動の予定はありません。 end -->
+                    <!-- 一致する検索結果がありません。 start -->
+                    <div class="active_item_none display_none" style="display:none">
+                        <div class="item_none_text">
+                            一致する検索結果がありません。
+                        </div>
+                        <div class="item_none_img d-flex justify-content-center">
+                            <img src="./asset/EmptySelectionResult.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- 一致する検索結果がありません。 end -->
+
+                    <div id="all_plan_table" class="active_item_box display_none">
+                        <div class="active_item">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2023.11.10</div>
+                                <div class="title_month  margin_left--4">20:34~23:12</div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_net margin_left--4">
+                                    ネット特活
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    火曜２年第3回ネット特別活動
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-play-circle"></i>
+                                <div class="item_video_content margin_left--2">配信予定</div>
+                            </div>
+                        </div>
+                        <div class="active_item">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2000.00.00</div>
+                                <div class="title_month  margin_left--4"></div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_briefing margin_left--4">
+                                    ブリーフィング
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    ブリーフィング動画タイトル
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-dash-circle"></i>
+                                <div class="item_video_content margin_left--2">視聴未完了</div>
+                                <div class="item_video_time margin_left--6">
+                                    期限：2024.01.01
+                                </div>
+                            </div>
+                        </div>
+                        <div class="active_item active_item_grey">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2023.11.10</div>
+                                <div class="title_month  margin_left--4">20:34~23:12</div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_campus margin_left--4">
+                                    オンサポ
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    地理総合オリエンテーション
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <div class="item_video_content margin_left--2">配信予定</div>
+                            </div>
+                        </div>
+                        <div class="active_item">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2023.11.10</div>
+                                <div class="title_month  margin_left--4">20:34~23:12</div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_campus margin_left--4">
+                                    ネット特活
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    火曜２年第3回ネット特別活動
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-play-circle"></i>
+                                <div class="item_video_content margin_left--2">配信予定</div>
+                            </div>
+                        </div>
+                        <div class="active_item">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2000.00.00</div>
+                                <div class="title_month  margin_left--4"></div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_briefing margin_left--4">
+                                    ブリーフィング
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    ブリーフィング動画タイトル
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-dash-circle"></i>
+                                <div class="item_video_content margin_left--2">視聴未完了</div>
+                                <div class="item_video_time margin_left--6">
+                                    期限：2024.01.01
+                                </div>
+                            </div>
+                        </div>
+                        <div class="active_item active_item_grey">
+                            <div class="active_item_title d-flex align-items-center">
+                                <div class="title_year">2023.11.10</div>
+                                <div class="title_month  margin_left--4">20:34~23:12</div>
+                                <div
+                                    class="title_sign d-flex align-items-center justify-content-center  title_sign_campus margin_left--4">
+                                    オンサポ
+                                </div>
+                            </div>
+                            <div class="active_item_topic margin_top--3 align-items-center">
+                                <div class="item_topic_content">
+                                    地理総合オリエンテーション
+                                </div>
+                                <div class="item_topic_information d-flex align-items-center">
+                                    <a href="#"
+                                        class="advertise_information_a d-flex align-items-center underline_none">
+                                        <i class="bi bi-file-earmark-text"></i>資料
+                                    </a>
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="active_item_video margin_top--3 d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <div class="item_video_content margin_left--2">配信予定</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button  data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">zaitan</button> -->
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <!-- <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5> -->
+                            <div>フィルター</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="filter_title padding_top--4 padding_bottom--4">予定種別</div>
+                            <div class="btn_group_box group_active_find">
+                                <button type="button"
+                                    class="btn btn_group0 btn_group_active margin_right--3">ネット特活</button>
+                                <button type="button" class="btn btn_group0 margin_right--3">オンサポ</button>
+                                <button type=" button" class="btn btn_group0">ブリーフィング</button>
+                            </div>
+                            <div class="filter_title padding_top--4 padding_bottom--4">今後の予定</div>
+                            <div class="btn_group_box group_active_find">
+                                <button type="button" class="btn btn_group1 btn_group_active">今後の1ヶ月</button>
+                                <button type="button" class="btn btn_group1">今年度</button>
+                            </div>
+                            <div class=" filter_title padding_top--4 padding_bottom--4">視聴状況
+                            </div>
+                            <div class="btn_group_box group_active_find">
+                                <button type="button"
+                                    class="btn btn_group2 btn_group_active margin_right--3">配信予定</button>
+                                <button type="button" class="btn btn_group2 margin_right--3">視聴未完了</button>
+                                <button type=" button" class="btn btn_group2">視聴済み</button>
+                            </div>
+                            <div class="btn_group_submit d-flex justify-content-center margin_top--8">
+                                <button type="button" class="btn item_labels_submit" data-bs-dismiss="offcanvas"
+                                    aria-label="Close">結果を表示する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- e_0101 ネット特別活動・予定一覧 end -->
+
+    <!-- 共通機能 学習情報 -->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=342-12407&mode=dev -->
+    <div class="ptcommon_container offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <!-- <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div> -->
+        <div class="common_item d-flex align-items-center common_item_border">
+            <div class="common_item_img">
+                <img src="./asset/learning.svg" alt="">
+            </div>
+            <span class="">学習支援情報</span>
+        </div>
+        <a href="#" class="common_item d-flex align-items-center underline_none">
+            <div class="common_item_img"></div>
+            <span class="">学習支援情報項目</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <a href="#" class="common_item d-flex align-items-center common_itme_big underline_none" data-bs-toggle="modal"
+            data-bs-target="#eventBooking">
+            <div class="common_item_img">
+                <img src="./asset/active.svg" alt="">
+            </div>
+            <span class="">オンサポ・ネット特活の予定一覧</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <a href="#" class="common_item d-flex align-items-center underline_none">
+            <div class="common_item_img">
+                <i class="bi rejection"></i>
+            </div>
+            <span class="">締め切り間近のレポート一覧</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+    </div>
+    <!-- 共通機能 学習情報 end -->
+
+    <!-- 共通機能 設定 -->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1812-43868&mode=dev -->
+    <div class="ptcommon_container offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <!-- <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div> -->
+        <div class="common_item d-flex align-items-center">
+            表示中のクラス：H23ADM1A
+        </div>
+        <div class="common_item d-flex align-items-center common_item_border notice_height">
+            <div class="common_item_img">
+                <img src="./asset/setting.svg" alt="">
+            </div>
+            <span class="">通知設定</span>
+        </div>
+        <a class="common_item d-flex align-items-center underline_none">
+            <div class="common_item_img">
+                <img src="./asset/message.svg" alt="">
+            </div>
+            <span class="">メールお知らせ通知設定</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+
+        </a>
+        <div class="common_item d-flex align-items-center common_item_border margin_top--5 notice_height">
+            <div class="common_item_img">
+                <img src="./asset/questionmark.svg" alt="">
+            </div>
+            <span class="">ヘルプ</span>
+        </div>
+        <div class="common_item d-flex align-items-center item_second margin_top--4">
+            <div class="common_item_img">
+                <img src="./asset/questioncircle.svg" alt="">
+            </div>
+            <span class="">ヘルプ</span>
+        </div>
+        <a href="#" class="margin_top--4 common_item d-flex align-items-center underline_none item_second">
+            <div class="common_item_img"></div>
+            <span class="">ヘルプ項目</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <div class="common_item d-flex align-items-center notice_height margin——top--8">
+            <div class="common_item_img">
+                <img src="./asset/help2.svg" alt="">
+            </div>
+            <span class="">チュートリアル</span>
+        </div>
+        <a href="#" class="margin_top--4 common_item d-flex align-items-center underline_none item_second"
+            data-bs-toggle="modal" data-bs-target="#tutorialHome"
+        >
+            <div class="common_item_img"></div>
+            <span class="">Nチャット</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <a href="#" class="margin_top--4 common_item d-flex align-items-center underline_none item_second">
+            <div class="common_item_img"></div>
+            <span class="">レポート</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <a href="#" class="margin_top--4 common_item d-flex align-items-center underline_none">
+            <div class="common_item_img">
+                <i class="bi bi-shield-lock"></i>
+            </div>
+            <span class="">個人情報保護方針</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+        <div class="common_item d-flex align-items-center common_item_border margin_top--5">
+            <div class="common_item_img">
+                <i class="bi bi-emoji-smile-fill icon-yellow"></i>
+            </div>
+            <span class="">苗字&nbsp;&nbsp;名前</span>
+        </div>
+        <a href="#" class="common_item d-flex align-items-center underline_none">
+            <div class="common_item_img">
+                <img src="./asset/logout.svg" alt="">
+            </div>
+            <span class="">ログアウト</span>
+            <span class="common_arrow padding_left--3"><img src="./asset/arrowbig.svg" alt=""></span>
+        </a>
+    </div>
+    <!-- 共通機能 設定 end -->
+    <!-- b_0101 ホームルーム c_0101 マイスタディ start-->
+    <div class="ngaku_page_layout container p-0 b_0101_container fixed ">
+
+        <div class="ngaku_page_smart_header d-lg-none d-xl-none d-xxl-none">
+            <div class="d-flex align-items-center margin_left_right--4" style="height: 54px;">
+                <div class=""><i class="bi bi-list icon--size" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i></div>
+                <div class="text-center  flex-grow-1">LOGO</div>
+                <div class=""><i class="bi bi-gear-fill icon--size" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i></div>
+            </div>
+
+        </div>
+        <div class="d-flex ngaku_page_content_area">
+            <!-- 左 start-->
+            <nav class="ngaku_page_layout_left d-none d-sm-none d-md-none d-lg-block col-left-280">
+                <!-- <img src="" alt="LOGO" width="62" height="30"> -->
+                <div>LOGO</div>
+                <div class="ngaku_header_lower align-items-start" id="ngaku_header_lower">
+                    <!-- ホームルーム -->
+                    <div class="nav flex-column nav-pills padding_top--5 padding_bottom--5" id="v-pills-tab"
+                        role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active border_left" id="ngaku_navi_home_room_tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-my_study_report-page" type="a" role="tab"
+                            aria-controls="v-pills-my_study_report-page" aria-selected="true"><i
+                                class="bi bi-house-door-fill"></i>
+                            ホームルーム
+                        </a>
+                        <a class="nav-link border_left" id="ngaku_navi_my_study_tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="a" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false"><i class="bi bi-book"></i> マイスタディ</a>
+                    </div>
+                    <!-- ホームルーム end -->
+                    <!-- 学習支援情報 -->
+                    <div id="common_learn_intelligence" class="nav learning_support_information btn-group dropend"
+                        aria-orientation="vertical">
+                        <a data-bs-toggle="dropdown" aria-expanded="false"
+                            class="nav-link w-100 d-flex align-items--center learning_support_information--link ">
+                            <div class="margin_right--2"><i class="bi bi-pencil"></i></i></div>
+                            <div class="w-100">学習支援情報</div>
+                            <div class=" justify-content-end "> <i class="bi bi-chevron-right"></i></div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-li"><a class="dropdown-item" href="#">学習支援情報項目</a></li>
+                        </ul>
+                    </div>
+                    <!-- 学習支援情報 end-->
+                </div>
+
+
+                <div class="ngaku_parts_left_scroll">
+                    <!-- オンサポ/ネット特活 -->
+                    <!-- PT003 -->
+                    <div class="pt003_container ngaku_parts_left_header_content display_none">
+                        <h6 class="ngaku_parts_header_title">
+                            <i class="bi bi-calendar3 padding_right--2"></i>
+                            &nbsp;オンサポ/ネット特活
+                        </h6>
+                        <div class="padding_top--4">直近の予定</div>
+                        <div class="ngaku_parts_inner_contents">
+                            <!-- content ネット特活-->
+                            <div class="d-flex flex-column mtb-3">
+                                <div class="">2000.00.00 00:00〜00:00</div>
+                                <div class="pt-2">
+                                    <h5><span class="badge--bgb9 badge--bg92">ネット特活</span></h5>
+                                </div>
+                                <div class="line_truncate--2"><a class="link--decoration sidebar_content_text"
+                                        href="#">火曜２年第3回ネット特別活動五六七八九九九九九九九九九九九九九九九九九九九九九九</a></div>
+                            </div>
+                            <!-- content ブリーフィング-->
+                            <div class="ngaku_net_lesson_plan d-flex flex-column mtb-3 ">
+                                <div class="">2000.00.00 00:00〜00:00</div>
+                                <div class="pt-2">
+                                    <h5><span class="badge--bgb9 badge--bg91">ブリーフィング</span></h5>
+                                </div>
+                                <div class="line_truncate--2">
+                                    <a class="ngaku_net_plan_title_area link--decoration sidebar_content_text font_color--B9B9B9"
+                                        href="#">ブリーフィング動画タイトル</a>
+                                </div>
+                            </div>
+                            <!-- content オンサポ-->
+                            <div class="ngaku_net_lesson_plan d-flex flex-column mtb-3 ">
+                                <div class="">2000.00.00 00:00〜00:00</div>
+                                <div class="pt-2">
+                                    <h5><span class="badge--bgb9 badge--bg90">オンサポ</span></h5>
+                                </div>
+                                <div class="line_truncate--2">
+                                    <a class="link--decoration sidebar_content_text"
+                                        href="#">火曜２年第3回ネット特別活動五六七八九〇一4567897654678765</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <a href="#" class="d-flex justify-content-end align-items-center link--unstyled "
+                            data-bs-toggle="modal" data-bs-target="#eventBooking" style="font-size: 0.75rem;">予定一覧を見る<i
+                                class="bi bi-chevron-right"></i>
+                        </a>
+
+                    </div>
+                    <!-- オンサポ/ネット特活 end-->
+                    <!-- 締め切り間近 PT004-->
+                    <div class="pt004_container ngaku_deadline_reports_contents ngaku_parts_left_header_content">
+                        <h6 class="ngaku_parts_header_title">
+                            <i class="bi rejection td_img"></i>締め切り間近
+                        </h6>
+                        <div class="ngaku_parts_inner_contents display_none">
+                            <div id="ngaku_deadline_reports_contents">
+                                <!-- content 締め切り間近-->
+                                <div class="d-flex flex-column mtb-3">
+                                    <a href="#" class="td_title d-flex">
+                                        <div class=" line_truncate--2 w-100">言語文化</div>
+                                        <div class="flex-shrink-1 width--13">第3回</div>
+                                    </a>
+                                    <div class="td_date pt-2">提出期限：2000.00.00</div>
+                                </div>
+                                <!-- content 締め切り間近 end-->
+                            </div>
+                        </div>
+
+
+                        <a href="#" class="d-flex justify-content-end align-items-center link--unstyled "
+                            style="font-size: 0.75rem;">締め切り間近のレポート一覧<i class="bi bi-chevron-right"></i></a>
+
+                    </div>
+                </div>
+            </nav>
+            <!-- 左 end-->
+
+
+            <!-- 右 start -->
+            <main class="ngaku_page_layout_right_header col-right-1000 ">
+                <header class="ngaku_page_layout_header border-bottom d-none d-sm-none d-md-none d-lg-block">
+                    <div class="d-flex">
+                        <div class="ngaku_page_breadcrumb_area flex-fill">
+                            <div class="flex-fill">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1800-24267&mode=design&t=cG9qmJe4LIcu87qY-4 -->
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="link--unstyled"> <i class="bi bi-house-door-fill"></i>&nbsp;ホームルーム</a>
+                                        </li>
+                                        
+                                        <li class="nav_ngaku_voice" style="display: none;"> <a href="#" class="link--unstyled"> <i class="bi bi-chevron-right"></i>&nbsp;みんなのこえ </a>
+                                        </li>
+                                        <li class="nav_class_voice" style="display: none;">
+                                            <a href="#" class="link--unstyled"> <i class="bi bi-chevron-right"></i>&nbsp;クラスのこえ </a>
+                                        </li>
+                                        
+                                        
+                                        <li class="nav_ngaku_announce" style="display: none;">
+                                            <a href="#" class="link--unstyled "> <i class="bi bi-chevron-right"></i>&nbsp;おしらせ一覧 </a>
+                                        </li>
+                                        <!-- <li><a href="#" class="link--unstyled"> <i class="bi bi-chevron-right"></i>&nbsp;おしらせ詳細 </a></li> -->
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="flex-fill ngaku_user_name_contentsl" id="pc_menu">
+                            <div class="flex-fill d-flex justify-content-end align-items--center">
+                                <a class="nav-link dropdown-toggle menu-text" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div><i class="bi bi-gear-fill"></i>&nbsp;通知設定</div>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-li"> <img class="message-img" src="./asset/message.svg"
+                                            alt=""><a class="dropdown-item" href="#">メールお知らせ通知設定</a></li>
+                                </ul>
+                                <a class="nav-link dropdown-toggle menu-text" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div><i class="margin_left--5 bi bi-question-circle-fill"></i>&nbsp;ヘルプ</div>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-li dropdown-menu-secondary"><img src="./asset/help1.svg"
+                                            alt="">
+                                        <a data-bs-toggle="collapse" aria-expanded="false"
+                                            aria-controls="collapseExample" class="dropdown-item"
+                                            href="#collapseExample">
+                                            ヘルプ
+                                        </a>
+                                        <img src="./asset/arrow.svg" alt="">
+                                    </li>
+                                    <div class="collapse" id="collapseExample">
+                                        <span class="menu-secondary-item">ヘルプ項目</span>
+                                    </div>
+                                    <li class="dropdown-menu-li dropdown-menu-secondary"> <img src="./asset/help2.svg"
+                                            alt="">
+                                        <a data-bs-toggle="collapse" aria-expanded="false"
+                                            aria-controls="collapseExample" class="dropdown-item"
+                                            href="#collapseExample1">
+                                            チュートリアル
+                                        </a>
+                                        <img src="./asset/arrow.svg" alt="">
+                                    </li>
+                                    <div class="collapse" id="collapseExample1">
+                                        <div data-bs-toggle="modal" data-bs-target="#tutorialHome" class="menu-secondary-item">Nチャット</div>
+                                        <div class="menu-secondary-item">レポート</div>
+                                    </div>
+                                    <li class="dropdown-menu-li"> <i class="bi bi-shield-lock"></i><a
+                                            class="dropdown-item" href="#">個人情報保護方針</a></li>
+                                </ul>
+                                <a class="nav-link dropdown-toggle menu-text" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div> <i class="margin_left--5 ml-1 bi bi-emoji-smile-fill">&nbsp;苗字　名前</i></div>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-li"> <img class="message-img" src="./asset/logout.svg"
+                                            alt=""><a class="dropdown-item" href="#">ログアウト</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </header>
+
+                <!-- 右 start page -->
+                <div class="ngaku_page_layout_right display_none" id="right_page">
+                    <!-- PT002 お知らせリストとお知らせ詳細ディスプレイチェンジのところ-->
+                    <div class="PT002 display_none">
+                        <!-- スマホメニュー -->
+                        <div class="sm-mobile-menu-area">
+                            <ul class="ngaku_navi nav nav-underline d-flex text-center padding_left_right--9 d-lg-none d-xl-none d-xxl-none"
+                                id="ngaku_page_smart_header">
+                                <li class=" nav-item flex-grow-1 ">
+                                    <a class=" nav-link active border_none" id="ngaku_navi_home_room_tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-my_study_report-page" type="a"
+                                        role="tab" aria-controls="v-pills-my_study_report-page" aria-selected="true"><i
+                                            class="bi bi-house-door-fill"></i>ホームルーム</a>
+                                </li>
+                                <li class="w-15"></li>
+                                <li class="nav-item flex-grow-1">
+                                    <a class="nav-link border_none" id="ngaku_navi_my_study_tab" data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-profile" type="a" role="tab"
+                                        aria-controls="v-pills-profile" aria-selected="false"><i
+                                            class="bi bi-camera-video"></i> マイスタディ</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt002_container display_none">
+                            <div class="ngaku_parts_header">
+                                <div class="ngaku_parts_header_title margin_right--2">
+                                    <i class="bi bi-bell-fill "></i> 急いで確認してください
+                                </div>
+                            </div>
+                            <div class="text-center margin_bottom--14 overflow_x">
+                                <div class="d-flex w200">
+                                    <div class="col excess_report">
+                                        <div class="d-flex flex-direction--column" data-bs-toggle="modal"
+                                            data-bs-target="#excess_report" >
+                                            <div
+                                                class="d-flex order--2  align-items-center me-auto margin--auto font_size">
+                                                <div class="new_info_icon"><i class="bi documentd--error"></i></div>
+                                                <div class="new_info_detail margin_left--1">提出期限切れ
+                                                    <br>レポート
+                                                </div>
+                                            </div>
+                                            <div class="new_info_num d-flex order--1">
+                                                <strong id="excess_report_num">999
+                                                </strong>
+                                                <div style="position: relative;width: 1rem;">
+                                                    <p class="card_units">件</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col return_report">
+                                        <div class="d-flex flex-direction--column" data-bs-toggle="modal"
+                                            data-bs-target="#resubmit_report_num">
+                                            <div
+                                                class="d-flex order--2  align-items-center me-auto margin--auto font_size">
+                                                <div class="new_info_icon"><i class="bi documentd--arrow"></i></div>
+                                                <div class="new_info_detail margin_left--1">再提出
+                                                    <br>レポート
+                                                </div>
+                                            </div>
+                                            <div class="new_info_num d-flex order--1">
+                                                <strong id="return_report_num​">2
+                                                </strong>
+                                                <div style="position: relative;width: 1rem;">
+                                                    <p class="card_units">件</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col unwatched_video">
+                                        <div class="d-flex flex-direction--column " data-bs-toggle="modal"
+                                            data-bs-target="#video_player_model">
+                                            <div
+                                                class="d-flex order--2  align-items-center me-auto margin--auto font_size">
+                                                <div class="new_info_icon"><i class="bi bi-camera-video"></i></div>
+                                                <div class="new_info_detail margin_left--1">未視聴動画
+                                                </div>
+                                            </div>
+                                            <div class="new_info_num d-flex order--1">
+                                                <strong id="unwatched_video_num">99
+                                                </strong>
+                                                <div style="position: relative;width: 1rem;">
+                                                    <p class="card_units">件</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ngaku_page_layout_center tab-content" id="v-pills-tabContent">
+
+                            <!-- ホームページ B0101 -->
+                            <div class="tab-pane fade show active nav_right_scroll" id="v-pills-my_study_report-page"
+                                role="tabpanel" aria-labelledby="ngaku_navi_home_room_tab" tabindex="0">
+
+                                <!-- PT027 NgakuAnnounce & ClassAnnounce -->
+                                <div
+                                    class="ngakuannounce_and_classannounce_container pt027_container ngaku_parts_container display_none d-flex flex-column margin_bottom--8 p-4 ">
+                                    <div class="">おしらせ
+                                        <span class="top-0 start-100 badge rounded-pill bg-danger margin_left--1">
+                                            99+
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </div>
+                                    <div class="margin_top_bottom--3">現在、おしらせはありません。</div>
+
+                                    <div class="ngakuannounce_table">
+                                        <!-- N学 -->
+                                        <div class="d-flex margin_top_bottom--3 flex_column ">
+                                            <div class="order--1 white_space--nowrap">
+                                                <span class="margin_right--3">2023.12.12</span>
+                                                <span
+                                                    class="badge my_study_report_system_notice_badge system_notice_badge--8B84A0">N学</span>
+                                            </div>
+                                            <div class="me-auto order--2">
+                                                <a href="#"
+                                                    class="w-100 link--unstyled line_truncate--1 my_study_report_system_notice--bold">奨学金について</a>
+                                            </div>
+                                            <div class="my_study_report_system_notice_survey order--3">アンケートあり</div>
+                                        </div>
+                                        <!-- クラス -->
+                                        <div class="d-flex margin_top_bottom--3 flex_column ">
+                                            <div class="order--1 white_space--nowrap">
+                                                <span class="margin_right--3">2023.12.12</span>
+                                                <span
+                                                    class="badge my_study_report_system_notice_badge system_notice_badge--B1A8CC ">クラス</span>
+                                            </div>
+                                            <div class="me-auto order--2">
+                                                <a href="#"
+                                                    class="w-100 link--unstyled line_truncate--1 my_study_report_system_notice--bold">【回答必須】三者面談のおしらせ</a>
+                                            </div>
+                                            <div class="my_study_report_system_notice_survey order--3">アンケートあり</div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="padding_top--4 ms-auto align-items-center"><a class="link--unstyled" id="Ngaku_Class_Announce"
+                                            href="#">おしらせ一覧を見る<i class="bi bi-chevron-right"></i></a></div>
+                                </div>
+
+                                <!-- PT027 NgakuVoice  -->
+                                <div
+                                    class="ngakuvoice_container pt027_container ngaku_parts_container display_none d-flex flex-column margin_bottom--8 p-4 ">
+                                    <div class="">みんなのこえ</div>
+                                    <div class="margin_top--6"><i class="bi bi-stopwatch margin_right--2"></i>
+                                        最新のディスカッション</div>
+                                    <div class="margin_top_bottom--3">現在、ディスカッションがありません。</div>
+                                    <div class="ngakuvoice_table ngakuvoice">
+                                        <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                            <a href="#" class="link--unstyled line_truncate--3">遠足について</a>
+                                            <div class="d-flex flex-row margin_top--1">
+                                                <div class="notice_group_text">2023.00.00 00:00</div>
+                                                <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" padding_top--4 ms-auto align-items-center"><a class="link--unstyled"
+                                        id="Ngaku_Voice"  href="#">直近のみんなのこえ一覧を見る<i class="bi bi-chevron-right"></i></a></div>
+                                </div>
+
+                                <!-- PT027 ClassVoice -->
+                                <div
+                                    class="classvoice_container pt027_container ngaku_parts_container display_none d-flex flex-column margin_bottom--8 p-4 ">
+                                    <div class="ngaku_parts_header_title">クラスのこえ</div>
+                                    <div class="margin_top--6"><i
+                                            class="bi bi-stopwatch margin_right--2"></i>最新のディスカッション</i>
+                                    </div>
+
+                                    <div class="p-2">現在、ディスカッションがありません。</div>
+                                    <!--   https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1781-16376&mode=dev -->
+                                    <div class="classvoice_table">
+                                        <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                            <a href="#"
+                                                class="link--unstyled">marvel好き集まれ二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二</a>
+                                            <div class="d-flex flex-row margin_top--1">
+                                                <div class="notice_group_text">2023.00.00 00:00</div>
+                                                <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="padding_top--4 ms-auto align-items-center"><a class="link--unstyled" id="Class_Voice"
+                                            href="#">直近のクラスのこえ一覧を見る<i class="bi bi-chevron-right"></i></a></div>
+                                </div>
+                                <!-- クラスのこえ end -->
+
+                            </div>
+                            <!-- ホームページ -->
+
+
+                            <!-- マイスタディ C0101-->
+                            <!-- MyStudy & ReportDetail  -->
+                            <!-- PT027 SubjectAnnounce  -->
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                aria-labelledby="ngaku_navi_my_study_tab" tabindex="0">
+                                <!-- p2 -->
+                                <div class="subjectannounce_container pt027_container display_none">
+                                    <ul class="nav nav-tabs nav-underline ngaku_parts_tab " id="pt014_contents_tab"
+                                        role="tablist">
+                                        <li id="ngaku_subject_status_tab" class="nav-item col" role="presentation">
+                                            <button class="mystudy_tab active" id="my_study" data-bs-toggle="tab"
+                                                data-bs-target="#my_study_report" type="button" role="tab"
+                                                aria-controls="my_study_report" aria-selected="true">レポート学習</button>
+                                        </li>
+                                        <li id="ngaku_schooling_status_tab" class="nav-item col" role="presentation">
+                                            <button class="mystudy_tab" id="profile-tab" data-bs-toggle="tab"
+                                                data-bs-target="#profile" type="button" role="tab"
+                                                aria-controls="profile" aria-selected="false">スクーリング・試験結果</button>
+                                        </li>
+                                        <li id="ngaku_my_qna_tab" class="nav-item col" role="presentation">
+                                            <button class="mystudy_tab" id="qa_tab_select" data-bs-toggle="tab"
+                                                data-bs-target="#messages" type="button" role="tab"
+                                                aria-controls="messages" aria-selected="false">質問一覧
+                                                <span class="top-0 start-100 badge rounded-pill bg-danger">
+                                                    99+
+                                                    <span class="visually-hidden"></span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panes PT014 -->
+                                    <div class="tab-content ngaku_parts_inner_contents display_none">
+                                        
+
+
+
+                                        <!-- レポート学習 -->
+                                        <div class="tab-pane active" id="my_study_report" role="tabpanel"
+                                            aria-labelledby="my_study" tabindex="0">
+                                            <!-- SP レポート学習 -->
+                                            <div class="ngaku_schooling_status_contents ngaku_parts_contents d-lg-none d-xl-none d-xxl-none">
+                                                <p>レポート学習をする科目を選択</p>
+                                                <button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-light">Light</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+                                            </div>
+                                            <!--PC レポート学習 -->
+                                            <div class="report_learning d-none d-sm-none d-md-none d-lg-block">
+                                                <div class="report_learning_scroll">
+                                                <div class="pt014_container ngaku_parts_contents display_none">
+                                                    <div class="d-flex margin_bottom--3" style="font-size: .75rem;">
+                                                        <div class="margin_right--6" style="width: 3.75rem;">ステータス</div>
+                                                        <div class="margin_right--6"><i
+                                                                class="bi document--checkmark"></i>…添削中</div>
+                                                        <div class="margin_right--6"><span style="background-color: #F3F3F3;padding: 0rem 0.25rem;">遅れ</span>…遅れ判定</div>
+                                                        <div class="margin_right--6">免除…免除レポート</div>
+                                                    </div>
+                                                    <div class="d-flex margin_bottom--6" style="font-size: .75rem;">
+                                                        <div class="margin_right--6" style="width: 3.75rem;">評価</div>
+                                                        <div class="margin_right--6">知…知識・技能</div>
+                                                        <div class="margin_right--6">思…思考・判断・表現</div>
+                                                        <div class="margin_right--6">態…主体的に取り組む態度</div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center padding_bottom--6" style="font-size: .75rem;">
+                                                        <div class="flex-center margin_right--6"><span style="background: #FFC977;padding: 0rem 0.25rem;margin-right: .5rem;">未読</span>未読：<span >1件</span></div>
+                                                        <div class="flex-center margin_right--6"><i class="icon_orange bi bi-exclamation-triangle-fill margin_right--2"></i>締切間近：<span class="fw-bold">1件</span></div>
+                                                        <div class="flex-center margin_right--6"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ：<span class="fw-bold">1件</span></div>
+                                                    </div>
+
+                                                    <div class="bd-example margin_top--4" style="overflow-y: scroll;">
+                                                        <table class="table table-bordered schooling_status_table">
+                                                            <thead> 
+                                                                <tr class="tr_report">
+                                                                    <th><div class="first_witch tr_report_title"><span class="line_truncate--2">科目</span></div></th>
+                                                                    <th><div class="tr_report_div">1</div></th>
+                                                                    <th><div class="tr_report_div">2</div></th>
+                                                                    <th><div class="tr_report_div">3</div></th>
+                                                                    <th><div class="tr_report_div">4</div></th>
+                                                                    <th><div class="tr_report_div">5</div></th>
+                                                                    <th><div class="tr_report_div">6</div></th>
+                                                                    <th><div class="tr_report_div">7</div></th>
+                                                                    <th><div class="tr_report_div">8</div></th>
+                                                                    <th><div class="tr_report_div">9</div></th>
+                                                                    <th><div class="tr_report_div">10</div></th>
+                                                                    <th><div class="tr_report_div">11</div></th>
+                                                                    <th><div class="tr_report_div">12</div></th>
+                                                                    <th colspan="3"><div>特別課題</div></th>
+                                                                    <th colspan="2"><div>定期試験</div></th>
+                                                                
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="tr_report">
+                                                                    <th>
+                                                                        <div class="tr_report_title"><span class="line_truncate--2">言語文化</span></div>
+                                                                    </th>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"><span class="ngaku_over_color_icon">遅れ</span></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SW">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"><span class="ngaku_mikakunin_color_icon">未読</span></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>8/10</li>
+                                                                            <li>70%</li>
+                                                                            <li>再提出</li>
+                                                                            <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>8/10</li>
+                                                                            <li>70%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_checkmark bi document--checkmark"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>9/10</li>
+                                                                            <li>100%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SWA">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li>20%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SWA">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/12</li>
+                                                                            <li>10%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li class="font_graya96">10/12</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td><div>免除</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>中間</div></td>
+                                                                    <td><div>年度末</div></td>
+                                                                    
+                                                                </tr>
+
+                                                                <tr class="tr_report">
+                                                                    <th><div class="tr_report_title"><span class="line_truncate--2">言語文化言語文化言語文化言語文化</span></div></th>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"><span class="ngaku_over_color_icon">遅れ</span></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SW">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"><span class="ngaku_mikakunin_color_icon">未読</span></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                            <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>8/10</li>
+                                                                            <li>70%</li>
+                                                                            <li>再提出</li>
+                                                                            <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>8/10</li>
+                                                                            <li>70%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_checkmark bi document--checkmark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                                data-bs-custom-class="custom-tooltip"
+                                                                                data-bs-title="添削中" ></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>9/10</li>
+                                                                            <li>100%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SDO">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2" ><i class="icon_red bi bi-exclamation-circle-fill tooltip-box-shadow"  data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                                data-bs-custom-class="custom-tooltip"
+                                                                                data-bs-title="期限切れ"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SWA">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li>20%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill"></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info td_SWA">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/10</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                                data-bs-custom-class="custom-tooltip"
+                                                                                data-bs-title="締切間近" ></i></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li>10/12</li>
+                                                                            <li>10%</li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    </td>
+                                                                    <td class="td_report_info ">
+                                                                        <ul class="p-0 m-0">
+                                                                            <li class="font_graya96">10/12</li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li class="margin_top--2"></li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td><div>免除</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>課題</div></td>
+                                                                    <td><div>中間</div></td>
+                                                                    <td><div>年度末</div></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                </div>
+                                                <!-- PT025 -->
+                                                <div class="pt025_container ngaku_parts_contents display_none">
+                                                    <strong>担当科目別状況</strong>
+                                                    <div class="bd-example margin_top--4" style="overflow-y: scroll;">
+                                                        <table class="table table-bordered schooling_status_table">
+                                                            <thead> 
+                                                                <tr class="tr_subject">
+                                                                    <th><div class="first_witch tr_subject_title"><span class="line_truncate--2">科目</span></div></th>
+                                                                    <th><div>1</div></th>
+                                                                    <th><div>2</div></th>
+                                                                    <th><div>3</div></th>
+                                                                    <th><div>4</div></th>
+                                                                    <th><div>5</div></th>
+                                                                    <th><div>6</div></th>
+                                                                    <th><div>7</div></th>
+                                                                    <th><div>8</div></th>
+                                                                    <th><div>9</div></th>
+                                                                    <th><div>10</div></th>
+                                                                    <th><div>11</div></th>
+                                                                    <th><div>12</div></th>
+                                                                    <th colspan="3"><div>特別課題</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="tr_subject">
+                                                                    <th><div class="tr_subject_title"><span class="line_truncate--2">言語文化</span></div></th>
+                                                                    <td><div>1/1</div></td>
+                                                                    <td><div>1/2</div></td>
+                                                                    <td><div>1/3</div></td>
+                                                                    <td><div>1/4</div></td>
+                                                                    <td><div>1/5</div></td>
+                                                                    <td><div>1/6</div></td>
+                                                                    <td><div>1/7</div></td>
+                                                                    <td><div>1/8</div></td>
+                                                                    <td><div>1/9</div></td>
+                                                                    <td><div>1/10</div></td>
+                                                                    <td><div>1/11</div></td>
+                                                                    <td><div>1/12</div></td>
+                                                                    <td><div>1/12</div></td>
+                                                                    <td><div>1/13</div></td>
+                                                                    <td><div>1/14</div></td>
+                                                                </tr>
+
+                                                                <tr class="tr_subject">
+                                                                    <th><div class="tr_subject_title"><span class="line_truncate--2">言語文化言語文化言語文化言語文化</span></div></th>
+                                                                    <td><div>1/1</div></td>
+                                                                    <td><div>1/2</div></td>
+                                                                    <td><div>1/3</div></td>
+                                                                    <td><div>1/4</div></td>
+                                                                    <td><div>1/5</div></td>
+                                                                    <td><div>1/6</div></td>
+                                                                    <td><div>1/7</div></td>
+                                                                    <td><div>1/8</div></td>
+                                                                    <td><div>1/9</div></td>
+                                                                    <td><div>1/10</div></td>
+                                                                    <td><div>1/11</div></td>
+                                                                    <td><div>1/12</div></td>
+                                                                    <td><div>1/12</div></td>
+                                                                    <td><div>1/13</div></td>
+                                                                    <td><div>1/14</div></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            </div><!-- report_learning -->
+                                        </div>
+
+
+                                        <!-- スクーリング・試験結果 -->
+                                        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab"
+                                            tabindex="0">
+
+                                            <!-- SP スクーリング出席数 -->
+                                            <div
+                                                class="ngaku_schooling_status_contents ngaku_parts_contents d-lg-none d-xl-none d-xxl-none">
+                                                スクーリング出席数と試験結果
+                                            </div>
+                                            <!-- PC スクーリング出席数 -->
+                                            <div class="ngaku_schooling_table_body d-none d-sm-none d-md-none d-lg-block">
+                                                <div id="ngaku_schooling_scroll">
+                                                    <div class="ngaku_schooling_status_contents ngaku_parts_contents ">
+                                                        <div class="ngaku_schooling_status_title"><span>スクーリング出席数</span>
+                                                        </div>
+                                                    <div id="schooling_status_div" style="overflow: scroll;">
+                                                        <table class="table table-bordered schooling_status_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th><div class="first_witch"><span class=" line_truncate--3">科目</span></div></th>
+                                                                    <th><div class="th_witch">11</div></th>
+                                                                    <th><div class="th_witch">2</div></th>
+                                                                    <th><div class="th_witch">3</div></th>
+                                                                    <th><div class="th_witch">4</div></th>
+                                                                    <th><div class="th_witch">5</div></th>
+                                                                    <th><div class="th_witch">6</div></th>
+                                                                    <th><div class="th_witch">7</div></th>
+                                                                    <th><div class="th_witch">8</div></th>
+                                                                    <th><div class="th_witch">9</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch text-nowrap">合計</div></th>
+                                                                    <th><div class="last_witch text-nowrap">必要時間数</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th><span class="first_witch"><span class=" line_truncate--3">言語文化</span></span></th>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">2</div></td>
+                                                                    <td><div class="th_witch">13</div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th><span class="first_witch"><span class=" line_truncate--3">英語コミュニケーションI</span></span></th>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch"></div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch"></div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch"></div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th><span class="first_witch"><span class=" line_truncate--3">英語コミュニケーションI英語コミュニケーションI</span></span></th>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch"></div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch"></div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">11</div></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ngaku_parts_contents">
+                                                    <div id="schooling_status_body" style="overflow: scroll;">
+                                                        <table class="table table-bordered schooling_status_table" >
+                                                            <thead>
+                                                                <tr>
+                                                                    <th><div class="first_witch"><span class=" line_truncate--3">科目</span></div></th>
+                                                                    <th><div class="th_witch">11</div></th>
+                                                                    <th><div class="th_witch">2</div></th>
+                                                                    <th><div class="th_witch">3</div></th>
+                                                                    <th><div class="th_witch">4</div></th>
+                                                                    <th><div class="th_witch">5</div></th>
+                                                                    <th><div class="th_witch">6</div></th>
+                                                                    <th><div class="th_witch">7</div></th>
+                                                                    <th><div class="th_witch">8</div></th>
+                                                                    <th><div class="th_witch">9</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch">1</div></th>
+                                                                    <th><div class="th_witch text-nowrap">合計</div></th>
+                                                                    <th><div class="last_witch text-nowrap">累計</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th><span class="first_witch"><span class=" line_truncate--3">特別活動</span></span></th>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">1</div></td>
+                                                                    <td><div class="th_witch">2</div></td>
+                                                                    <td><div class="th_witch">13</div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th><span class="first_witch"><span class=" line_truncate--3"><span>ネット</span>
+                                                                        <div>特別活動</div></span></span></th>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch"> </div></td>
+                                                                    <td><div class="th_witch"> </div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td class="diagonal-cell"></td>
+                                                                    <td class="diagonal-cell-t"></td>
+                                                                </tr>
+                                                               
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ngaku_parts_contents">
+                                                    <div class="ngaku_schooling_status_title "><strong>試験結果</strong></div>
+
+                                                    <div class="d-flex ngaku_evaluation margin_bottom--6">
+                                                        <div class="margin_right--6">評価</div>
+                                                        <div class="margin_right--6">知…知識・技能</div>
+                                                        <div class="margin_right--6">思…思考・判断・表現</div>
+                                                        <div class="margin_right--6">態…主体的に取り組む態度</div>
+                                                    </div>
+
+                                                    <div id="exam_result_div">
+                                                        <table class=" table-bordered schooling_status_table schooling_status_table--width">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="diagonal-cell-tt first_witch"></th>
+                                                                    <th colspan="2" class="th-2"><div class="th-2">試験</div></th>
+                                                                    <th colspan="2"  class="th-3"><div >実技</div></th>
+                                                                    <th colspan="2"  class="th-3"><div >効果測定</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th><div class="first_height"><span class=" line_truncate--3">科目</span></div></th>
+                                                                    <td class="td-3"><div class="">中間試験</div></td>
+                                                                    <td class="td-3"><div class="">年度末試験</div></td>
+                                                                    <td class="td-4" ><div class="td-4">1</div></td>
+                                                                    <td class="td-4" ><div class="td-4">2</div></td>
+                                                                    <td class="td-4" ><div class="td-4">1</div></td>
+                                                                    <td class="td-4" ><div class="td-4">2</div></td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <th><div class="first_height"><span class=" line_truncate--3">言語文化</span></div></th>
+                                                                    <td><div class="th_witch d-flex p-3">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                    </div></td>
+                                                                    <td><div class="th_witch d-flex p-3">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right ">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                    </div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                
+                                                                </tr>
+                                                               
+                                                                <tr>
+                                                                    <th><div class="first_height"><span class=" line_truncate--3">英語コミュニケーションI英語コミュニケーションI</span></div></th>
+                                                                    <td><div class="th_witch d-flex p-3">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                    </div></td>
+                                                                    <td><div class="th_witch d-flex p-3">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right ">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                    </div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                    <td><div class="th_witch">○</div></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!-- スクーリング・試験結果 end-->
+
+                                        <!-- 質問一覧 -->
+                                        <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1288-22892&mode=dev -->
+                                        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="q a"
+                                            tabindex="0">
+                                            <div id="ngaku_my_qna_contents">
+                                                <!-- QaList -->
+                                                <!-- add 韓 QaList  -->
+                                                <!-- empty img -->
+                                                <div class="ngaku_parts_qa_empty_conttent" style="display: none;">
+                                                    <div class="ngaku_parts_qa_header">
+                                                        <div class="ngaku_parts_header_contents">
+                                                            <div class="ngaku_my_qna_title">現在、質問はありません。</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="ngaku_my_qna_empty">
+                                                        <img src="asset/EmptyStateImage_NotQuestion.png"
+                                                            alt="現在、質問はありません" width="250" height="230">
+                                                    </div>
+                                                </div>
+                                                <!-- empty img end -->
+                                                <!-- qa list -->
+                                                <div class="ngaku_parts_qa_header">
+                                                    <div class="ngaku_parts_header_contents">
+                                                        <div class="ngaku_my_qna_title">質問件数:<span>4</span>件</div>
+                                                    </div>
+                                                </div>
+                                                <div id="ngaku_my_qna_div">
+                                                    <div class="ngaku_my_qa_content ngaku_parts_contents ">
+                                                        <input type="hidden" class="query_kamoku_video_id" value="6163">
+                                                        <div>質問
+                                                            <span
+                                                                class="top-0 start-100 badge rounded-pill bg-danger margin_left--1">
+                                                                未読
+                                                                <span class="visually-hidden"></span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="d-flex padding_top_bottom--4">
+                                                            <div class="margin_right--3">言語文化五六七八九〇一二三四五
+                                                                第1回
+                                                                分かりやすさの秘訣とは？三四五六七八九〇</div>
+                                                        </div>
+                                                        <div class="d-flex padding_top--4 font_size--3">再生位置：3分24秒</div>
+                                                        <div class="d-flex padding_top--4">
+                                                            <div class="ngaku_my_qa_content_text">
+                                                                こここここここここここここここここここここここここここここここここここちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されますこちらに質問が表示されます
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex padding_top--4 font_size--3">
+                                                            <div class="margin_right--3">2000.00.00</div>
+                                                            <div>投稿者：名前</div>
+                                                        </div>
+                                                        <div class="d-flex padding_top_bottom--4 font_size--3">
+                                                            <div class="margin_right--3">回答数：1件</div>
+                                                            <div>返信数：2件</div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end">
+                                                            <a href="javascript:void(0)"
+                                                                class="link--unstyled ">ビデオ教材の質問を開く<i
+                                                                    class="bi bi-chevron-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 質問一覧 end-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Nav tabs -->
+
+                            <!-- マイスタディ end *******************************************************************-->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- B0301 start-->
+                <!-- PT027 NgakuAnnounce List & ClassAnnounce List-->
+                <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=257-39828&mode=dev -->
+                <div id="right_page_ngaku_class_announce" class="ngakuannounce_and_classannounce_layout pt027_container display_none"
+                    style="display: none;">
+                    <!-- PT027 NgakuAnnounce & ClassAnnounce smartphone-->
+                    <nav aria-label="breadcrumb" class="breadcrumb_navigation d-lg-none d-xl-none d-xxl-none">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="link--unstyled toHomePage"><i class="bi bi-house-door-fill"></i>&nbsp;</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i><a href="#" class="link--unstyled">おしらせ一覧</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="padding_top--8 ngaku_announce_title ">おしらせ一覧
+                        <span class="top-0 start-100 badge rounded-pill bg-danger">
+                            99+
+                            <span class="visually-hidden"></span>
+                        </span>
+                    </div>
+
+
+                    <div class="ngakuannounce_and_classannounce_radio_group padding_top--8">
+                        <!-- フィルター ダイヤログ　smartphone-->
+                        <div class="ngakuannounce_and_classannounce_radio_smartphone">
+                            <div class="smartphone_hidden">
+                                <div class="d-flex ngakuannounce_and_classannounce_radio_smartphone_header">
+                                    <div class="ngaku_parts_header_title w-100 ">フィルター</div><i
+                                        class="hide_filter bi bi-x-lg"></i>
+                                </div>
+                            </div>
+                            <div style="padding: 1rem 0;">
+                                <span class="ngakuannounce_and_classannounce_radio_smartphone_title">種別</span>
+                                <div class="btn-group margin_right--4" role="group"
+                                    aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="notice_outline_left"
+                                        id="notice_outline_left1" autocomplete="off" checked>
+                                    <label class=" btn-outline-primary notice_outline_left"
+                                        for="notice_outline_left1">すべて
+                                    </label>
+
+                                    <input type="radio" class="btn-check" name="notice_outline_left"
+                                        id="notice_outline_left2" autocomplete="off">
+                                    <label class=" btn-outline-primary notice_outline_left"
+                                        for="notice_outline_left2">N学</label>
+
+                                    <input type="radio" class="btn-check" name="notice_outline_left"
+                                        id="notice_outline_left3" autocomplete="off">
+                                    <label class=" btn-outline-primary notice_outline_left"
+                                        for="notice_outline_left3">クラス</label>
+                                </div>
+                                <span
+                                    class="ngakuannounce_and_classannounce_radio_smartphone_title margin_top--4">アンケート</span>
+
+                                <div class="btn-group ngakuannounce_and_classannounce_radio_smartphone--margin"
+                                    role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="radiodata" id="btnradio1"
+                                        autocomplete="off" checked>
+                                    <label class=" btn-outline-primary  notice_outline_right "
+                                        for="btnradio1">すべて</label>
+
+                                    <input type="radio" class="btn-check" name="radiodata" id="btnradio2"
+                                        autocomplete="off">
+                                    <label class=" btn-outline-primary  notice_outline_right "
+                                        for="btnradio2">アンケートあり</label>
+                                </div>
+                                <div
+                                    class="padding_top--4 ngakuannounce_and_classannounce_radio_smartphone_button_box">
+                                    <button class="ngakuannounce_and_classannounce_radio_smartphone_button"
+                                        type="button" id="Show_filter_results">結果を表示する</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- フィルター smartphone end-->
+
+                    </div>
+
+                    <div class="margin_top--8 announce_list_scroll"  id="gakuannounce_and_classannounce_table">
+                        <div class="d-flex flex-column margin_bottom--8 p-4 home_notice_group">
+                            <div class="margin_top_bottom--3">現在、おしらせはありません。</div>
+                            <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1781-16242&mode=dev -->
+
+                            <div class="ngakuannounce_and_classannounce_container_list">
+
+                                <!-- フィルター smartphone-->
+                                <button type="button"
+                                    class="btn btn-outline-secondary show_filter d-dm-block d-lg-none margin_bottom--4">フィルター
+                                    <i class="bi bi-chevron-down"></i>
+                                </button>
+                                <!-- フィルター smartphone end-->
+
+                                <div class="label_gloup flex-wrap">
+                                    <div class="label d-lg-none d-xl-none d-xxl-none" >
+                                        N学<i class="bi bi-x"></i>
+                                    </div>
+                                    <div class="label d-lg-none d-xl-none d-xxl-none">
+                                        アンケートあり<i class="bi bi-x"></i>
+                                    </div>
+                                </div>
+
+                                <div class="border-bottom"></div>
+
+                                <div class="d-flex flex_column system_notice_list">
+                                    <div class="order--1 white_space--nowrap">
+                                        <span class="margin_right--3">2023.12.12</span>
+                                        <span
+                                            class="badge  home_system_notice_badge system_notice_badge--8B84A0">N学</span>
+                                    </div>
+                                    <div class="me-auto order--2">
+                                        <a href="#"
+                                            class="w-100 link--unstyled line_truncate--1 home_system_notice--bold">奨学金について</a>
+                                    </div>
+                                    <div class="home_system_notice_survey order--3">アンケートあり</div>
+                                </div>
+                                <div class="d-flex flex_column system_notice_list">
+                                    <div class="order--1 white_space--nowrap">
+                                        <span class="margin_right--3">2023.12.12</span>
+                                        <span
+                                            class="badge  home_system_notice_badge system_notice_badge--B1A8CC ">クラス</span>
+                                    </div>
+                                    <div class="me-auto order--2">
+                                        <a href="#"
+                                            class="w-100 link--unstyled line_truncate--1 home_system_notice--bold">【回答必須】三者面談のおしらせ</a>
+                                    </div>
+                                    <div class="home_system_notice_survey order--3">アンケートあり</div>
+                                </div>
+                                <div class="d-flex flex_column system_notice_list">
+                                    <div class="order--1 white_space--nowrap">
+                                        <span class="margin_right--3">2023.12.12</span>
+                                        <span
+                                            class="badge  home_system_notice_badge system_notice_badge--B1A8CC">クラス</span>
+                                    </div>
+                                    <div class="me-auto order--2">
+                                        <a href="#"
+                                            class="w-100 link--unstyled line_truncate--1">2024年度に大学・短大・専修学校専門課程等に進学した場合の奨学金の予約</a>
+                                    </div>
+                                    <div class="home_system_notice_survey order--3">アンケートあり</div>
+                                </div>
+                                <div class="d-flex flex_column system_notice_list">
+                                    <div class="order--1 white_space--nowrap">
+                                        <span class="margin_right--3">2023.12.12</span>
+                                        <span
+                                            class="badge  home_system_notice_badge system_notice_badge--8B84A0">N学</span>
+                                    </div>
+                                    <div class="me-auto order--2">
+                                        <a href="#" class="w-100 link--unstyled line_truncate--1">文化祭の催しについて</a>
+                                    </div>
+                                    <div class="home_system_notice_survey order--3">アンケートあり</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- B0301 end -->
+
+                <!-- B0501 start-->
+                <!-- PT027 ngakuvoice -->
+                <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1786-17737&mode=dev -->
+                <div id="right_page_ngakuvoice" class="ngakuvoice_list ngakuvoice_container pt027_container display_none" style="display: none;">
+                    <nav aria-label="breadcrumb" class="breadcrumb_navigation d-lg-none d-xl-none d-xxl-none">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="link--unstyled toHomePage"><i class="bi bi-house-door-fill"></i>&nbsp;</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i><a href="#" class="link--unstyled">みんなのこえ</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="padding_top--8 ngaku_announce_title">みんなのこえ</div>
+                    <div class="ngakuvoice_search">
+                        <div class="p-2 w-100"></div>
+                        <div class="p-2 flex-shrink-1 search_group margin_bottom--5">
+                            <i class="bi bi-search search_group_icon"></i>
+                            <input type="search" class="form-control search_group_input" id="" placeholder="キーワード検索">
+                        </div>
+                    </div>
+
+                    <div class="search_group_key">“marvel”の検索結果100件中の最新10件を表示</div>
+                    <div class="search_group_key">“marvel”に一致する検索結果は見つかりませんでした。検索条件を変えて検索してみてください。</div>
+                    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=2011-31587&mode=dev -->
+
+                    <div class="ngakuvoice_list_container" id="ngakuvoice_sroll">
+                        <div class="d-flex flex-column p-4 my_study_report_notice_group">
+                            <div class=""><i class="bi bi-stopwatch margin_right--2"></i>
+                                最新のディスカッション</div>
+                            <div class="margin_top_bottom--3">現在、みんなのこえのディスカッションがありません。</div>
+                            <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1781-16270&mode=dev-->
+                            <div class="ngakuvoice">
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">遠足について</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">クラスTシャツについて</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">文化祭について</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#"
+                                        class="link--unstyled line_truncate--3">一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class=" padding_top--4 ms-auto align-items-center"><a class="link--unstyled"
+                                    href="#">全てのディスカッションを見る<i class="bi bi-chevron-right"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- B0501 end -->
+
+                <!-- B0701 start-->
+                <!-- PT027 ClassVoice -->
+                <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1786-18319&mode=design -->
+                <div id="right_page_classvoice" class="classvoice_list classvoice_container pt027_container display_none" style="display: none;">
+                    <nav aria-label="breadcrumb" class="breadcrumb_navigation d-lg-none d-xl-none d-xxl-none">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="link--unstyled toHomePage"><i class="bi bi-house-door-fill"></i>&nbsp;</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i><a href="#" class="link--unstyled">クラスのこえ</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="padding_top--8 ngaku_announce_title">クラスのこえ</div>
+                    <div class="ngakuvoice_search">
+                        <div class="p-2 w-100"></div>
+                        <div class="p-2 flex-shrink-1 search_group margin_bottom--5">
+                            <i class="bi bi-search search_group_icon"></i>
+                            <input type="search" class="form-control search_group_input" id="" placeholder="キーワード検索">
+                        </div>
+                    </div>
+
+                    <!-- <div class="search_group_key">“marvel”の検索結果100件中の最新10件を表示</div> -->
+                    <!-- <div class="search_group_key">“marvel”に一致する検索結果は見つかりませんでした。検索条件を変えて検索してみてください。</div> -->
+                    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=2011-31587&mode=dev -->
+
+                    <div class="ngakuvoice_list_container" id="classvoice_scroll">
+                        <div class="d-flex flex-column p-4 my_study_report_notice_group">
+                            <div class=""><i class="bi bi-stopwatch margin_right--2"></i>
+                                最新のディスカッション</div>
+                            <!-- <div class="margin_top_bottom--3">現在、みんなのこえのディスカッションがありません。</div> -->
+                            <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1781-16270&mode=dev-->
+                            <div class="ngakuvoice">
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">遠足について</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">クラスTシャツについて</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#" class="link--unstyled line_truncate--3">文化祭について</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column margin_top_bottom--5 margin_left_right--3">
+                                    <a href="#"
+                                        class="link--unstyled line_truncate--3">一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二</a>
+                                    <div class="d-flex flex-row margin_top--1">
+                                        <div class="notice_group_text">2023.00.00 00:00</div>
+                                        <div class="notice_group_text">投稿者：一二三四五六七八九〇一二三四五</div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="padding_top--4 ms-auto align-items-center"><a class="link--unstyled"
+                                    href="#">全てのディスカッションを見る<i class="bi bi-chevron-right"></i></a></div>
+                            
+                            <div class="padding_top--4 ms-auto align-items-center"><a class="link--unstyled"
+                                href="#">全ての検索結果を見る<i class="bi bi-chevron-right"></i></a></div>
+                                
+                        </div>
+                    </div>
+                </div>
+                <!-- B0701 end -->
+
+                <!-- B0304 start-->
+                <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1786-17006&mode=dev -->
+                <!-- PT027 ngakuannounce_and_classannounce  -->
+                <div  class="ngaku_and_class_announce_details pt027_container display_none" style="display: none;">
+                    <!-- PT027 NgakuAnnounce & ClassAnnounce smartphone-->
+                    <nav aria-label="breadcrumb" class="breadcrumb_navigation d-lg-none d-xl-none d-xxl-none">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="link--unstyled toHomePage"><i class="bi bi-house-door-fill"></i>&nbsp;</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i><a href="#" class="link--unstyled">おしらせ一覧</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i><a href="#" class="link--unstyled">おしらせ詳細</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="ngaku_and_class_announce_details_control">
+
+                        <div class="ngaku_and_class_announce_details_title">奨学金について</div>
+                        <div class="pre">
+                            <pre>
+2023年4月より「就学支援金」の申請方法が、web申請となっています。生徒（保護者、保証人等）の皆さん自身により、インターネット上の東京都「就学支援金」申請サイト＜e-shien＞へアクセスしていただき、必要項目をご自身で入力していただいています。 
+
+本校からお送りしている「ログインID通知書」（A4大、青封筒）が届いた方は、全員、必ず速やかに申請サイト＜e-shien＞から手続きを行ってください。  
+
+・就学生支援金を申請されない方も「意向登録」までの入力が必要です。「意向登録」まで手続きをすすめ、申請しない旨の処理を行ってください。  
+・申請が遅くなると、支給期間、支給金額が減額となる可能性があります。
+
+◆就学支援金の支給までの流れ
+生徒は、東京都の申請システム「e-Shien」でWeb申請します。 
+↓  ＮＨＫ学園は、生徒からのWeb申請に基づき、東京都へ必要な処理手続きをします。 
+↓  東京都は、所得審査を行い、支給額を決定します。 
+
+◆「就学支援金」制度については、文部科学省のホームページをご覧ください。 【文部科学省 高校生等への就学支援】 https://www.mext.go.jp/a_menu/shotou/mushouka  
+        </pre>
+                        </div><!-- pre -->
+
+                        <div class="survey_container ">アンケート：<a href="#">URL</a></div>
+                        <div class="file_info">ファイル：<a href="#" class="file_name">ファイル名</a></div>
+                        <div class="expiration_info"><span class="expiration_date">表示期限：2024.01.01</span></div>
+
+                    </div><!-- ngaku_and_class_announce_details_control -->
+
+                    <div class="d-flex justify-content-between ngaku_and_class_announce_details_pagination">
+                        <a href="#" class="prev link--unstyled">
+                            <i class="bi bi-chevron-left"></i>前のおしらせ
+                        </a>
+                        <a href="#" class="next link--unstyled">
+                            次のおしらせ<i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+                    <!-- B0304 end-->
+
+                </div><!-- 右 start page end -->
+                <!-- footer start -->
+                <footer>
+                    <div class="bg--dark">
+                        <div class="container-fluid footer_copyright_statement">
+                            Copyright NHK GAKUEN(NHK Academy of Distance Learning) All rights reserved.
+                        </div>
+                    </div>
+                </footer>
+                <!-- footer end -->
+            </main>
+            <!-- right content end-->
+        </div>
+    </div>
+    <!-- b_0101 ホームルーム c_0101 マイスタディend-->
+
+    <!-- 0801期限切れレポート一覧 excess_report modal-->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=569-4435&mode=dev -->
+    <div class="modal fade excess_report_modal" id="excess_report" data-bs-backdrop="true" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="new_info_detail" aria-hidden="true">
+        <div class="modal-dialog excess_report_modal_size modal-lg">
+            <div class="modal-content">
+                <div class="modal-header excess_report_header_body border_bottom--none">
+                    <div class="modal-title fw-bold" id="new_info_detail">期限切れレポート一覧</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="excess_report_body">
+                        <div class="excess_report_header">
+                            <div class="col-5">教科</div>
+                            <div class="col-4">レポート・ユニット</div>
+                            <div class="col-3">提出期限</div>
+                        </div>
+                        <div class="excess_report_content excess_report_scroll">
+                            <!-- excess_report_item -->
+                            <div class="excess_report_num d-flex excess_report_item ">
+                                <div class="col-11 d-flex flex-column flex-md-column flex-lg-row">
+                                    <div class="col-12 col-md-6 excess_report_title">英語コミュニケーションⅠ</div>
+                                    <div class="excess_report_unito d-flex flex-row flex-lg-column col-12 col-md-4">
+                                        <div class="flex-md-fill padding_right--5">第12回</div>
+                                        <div class="flex-md-fill">ユニット：1</div>
+                                    </div>
+                                    <div class="col-2 excess_report_right">
+                                        <span class="text-nowrap d-lg-none d-xl-none d-xxl-none">提出期限：</span>
+                                        2000.00.00
+                                    </div>
+                                </div>
+                                <div class="col-1 excess_report_right justify-content-end">
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <!-- excess_report_item end-->
+                        </div> <!-- excess_report_content -->
+                    </div><!-- excess_report_body -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 0801期限切れレポート一覧 excess_report modal end-->
+
+    <!-- 0901再提出レポート一覧 excess_report modal-->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=311-6347&mode=dev -->
+    <div class="modal fade excess_report_modal" id="resubmit_report_num" data-bs-backdrop="true"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="new_info_detail" aria-hidden="true">
+        <div class="modal-dialog excess_report_modal_size modal-lg">
+            <div class="modal-content">
+                <div class="modal-header excess_report_header_body border_bottom--none">
+                    <div class="modal-title fw-bold" id="new_info_detail">再提出レポート一覧</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="excess_report_body">
+                        <div class="excess_report_header">
+                            <div class="col-5">教科</div>
+                            <div class="col-4">レポート・ユニット</div>
+                            <div class="col-3">再提出期限</div>
+                        </div>
+                        <div class="excess_report_content resubmit_report_scroll">
+                            <!-- excess_report_item -->
+                            <div class="excess_report_num d-flex excess_report_item ">
+                                <div class="col-11 d-flex flex-column flex-md-column flex-lg-row">
+                                    <div class="col-12 col-md-6 excess_report_title line_truncate--2">
+                                        英語コミュニケーションⅠ</div>
+                                    <div class="excess_report_unito d-flex flex-row flex-lg-column col-12 col-md-4">
+                                        <div class="flex-md-fill padding_right--5">第12回</div>
+                                        <div class="flex-md-fill">ユニット：1</div>
+                                    </div>
+                                    <div class="col-2 excess_report_right"><span
+                                            class="text-nowrap d-lg-none d-xl-none d-xxl-none">再提出期限：</span>2000.00.00
+                                    </div>
+                                </div>
+                                <div class="col-1 excess_report_right justify-content-end">
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </div>
+                            <!-- excess_report_item end-->
+                        </div> <!-- excess_report_content -->
+                    </div><!-- excess_report_body -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 0901再提出レポート一覧 excess_report modal end-->
+
+
+    <!-- 0501_ブリーフィング動画 -->
+    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=254-38644&mode=dev -->
+    <div class="modal fade excess_report_modal" id="video_player_model" tabindex="-1"
+        aria-labelledby="video_player_modelLabel" data-bs-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog excess_report_modal_size modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- <video id="my-video" controls style="width:100%">
+                    <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> -->
+                    <!-- <video id="dov" width="100%" poster="Vdo/XFpicture50018.bmp" controls> -->
+                    <div id="video_player_video" class="video_player_video">
+                        <video id="my-video" width="100%">
+                            <source src="./asset/test.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video_player_controls video_controls d-flex align-items-center">
+                        <div id="video_player_prev_course" class="video_player_control_button video_controls_previous"
+                            onclick="previousVideo()"></div>
+                        <div class="video_player_control_button video_controls_start" onClick="sta()"></div>
+                        <div id="video_player_next_course" class="video_player_control_button video_controls_next"
+                            onclick="nextVideo()"></div>
+                        <div class="video_controls_starttime">00:00:00</div>
+                        <input type="range" id="seek-bar" value="0">
+                        <div class="video_controls_endtime">00:00:00</div>
+                        <div class="video_controls_voice"></div>
+                        <div id="volume-input">
+                            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="video_player_control_button video_controls_speedometer" data-bs-toggle="dropdown"
+                            aria-expanded="false"></div>
+                        <ul id="dropdown-menu" class="video_player_control_button dropdown-menu">
+                            <li><a class="dropdown-item" data-speed="0.5" href="#">0.5</a></li>
+                            <li><a class="dropdown-item" data-speed="1" href="#">1.0</a></li>
+                            <li><a class="dropdown-item" data-speed="1.25" href="#">1.25</a></li>
+                            <li><a class="dropdown-item" data-speed="1.5" href="#">1.5</a></li>
+                        </ul>
+                        <div class="video_player_control_button video_controls_fullscreen" onclick="fullScreen()"></div>
+                    </div>
+                    <!--<audio controls>
+                    <source src="Vdo/glow.mp3" type="audio/mpeg">
+                </audio>-->
+                    <div class="advertise_title">
+                        動画タイトル七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三二三四五六七八
+                    </div>
+                    <div class="advertise_tip padding_bottom--4">
+                        ネット特別活動の一つとなります。期間内に必ず試聴してください。
+                    </div>
+
+                    <!-- ※今後の学習に影響がありますので必ず視聴してください。 start -->
+                    <!-- <div class="advertise_noscore padding_bottom--2">
+                    ※今後の学習に影響がありますので必ず視聴してください
+                </div> -->
+                    <!-- ※今後の学習に影響がありますので必ず視聴してください。 end  -->
+
+                    <div class="advertise_timelimit padding_bottom--2">
+                        視聴期限：2024.01.01
+                    </div>
+                    <div class="process_content d-flex align-items-center">
+                        <div class="process_content_tip">視聴状況</div>
+                        <!-- <div class="progress flex-grow-1 margin_left--5" role="progressbar" aria-label="Basic example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 30%"></div>
+                    </div> -->
+                        <progress id="progress-bar"
+                            class="ui-progressbar ui-widget ui-widget-content ui-corner-all progress-bar progress flex-grow-1 margin_left--5"
+                            style="object-fit:cover" min="0" max="100" value="10" role="progressbar" aria-valuemin="0"
+                            aria-valuemax="100" aria-valuenow="3">
+                        </progress>
+                        <div class="process_content_num padding_left--9">
+                            <span class="number">30</span>
+                            <span class="percent">%</span>
+                        </div>
+                    </div>
+                    <div class="advertise_information padding_top--2 d-flex">
+                        <a href="#" class="advertise_information_a d-flex align-items-center underline_none">
+                            <i class="bi bi-file-earmark-text"></i>資料
+                        </a>
+                    </div>
+
+                    <!-- ※この動画は既に再生・出席済みです start -->
+                    <!-- <div class="advertise_finish padding_top--2">※この動画は既に再生・出席済みです</div> -->
+                    <!-- ※この動画は既に再生・出席済みです end -->
+
+                    <div class="padding_top--4 advertise_prompt">
+                        スキップの上限は5回です。上限を超えた場合は、オンサポ・ネット特別活動一覧からご覧ください。
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-start padding_top--1">
+                    <button type="button" class="btn btn-secondary foot_btn" id="liveToastBtn">後で見る</button>
+                    <div class="toast-container position-fixed top-0 start-50 p-3" style="transform:translate(-50%)">
+                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-bs-autohide="false">
+                            <div class="toast-body">
+                                <div class="title_question">
+                                    後で見ますか？
+                                </div>
+                                <div class="content_text">
+                                    <span>
+                                        ただ今のスキップ回数は2回です。<br>
+                                        スキップの上限は5回まで可能です。
+                                    </span>
+
+                                    <!-- スキップする時のダイアログ5回目（最終） start -->
+                                    <!-- <span>
+                                スキップできる上限の5回に達しました。
+                                ログイン時にこの動画が表示されなくなります。
+                                動画を再生したい場合は、ホームルームのオンサ
+                                ポ・ネット特活の予定一覧からご覧ください。
+                            </span> -->
+                                    <!-- スキップする時のダイアログ5回目（最終） end -->
+
+                                </div>
+                                <div class="button_group padding_top--6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn_back " data-bs-dismiss="toast"
+                                        aria-label="Close">戻る</button>
+                                    <button type="button" class="btn btn_enter" data-bs-dismiss="modal">後で見る</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">後で見る</button> -->
+                    <button type="button" class="btn btn-primary btn-home-enter foot_btn">ホームルームに入る</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 0501_ブリーフィング動画 excess_report modal end-->
+
+</body>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/system_notice.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        homepage.init();
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })
+</script>
+
+
+
+</html>
