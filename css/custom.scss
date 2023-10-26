@@ -1234,6 +1234,7 @@ $container-max-widths: (
 
             .modal-content {
                 height: 100%;
+                width: 100% !important;
 
                 .modal-header {
                     padding: 1rem;
@@ -1412,9 +1413,163 @@ $container-max-widths: (
 
             .modal-content {
                 height: 100%;
+                width: 100% !important;
 
                 .modal-body {
                     #carouselExampleCaptions {
+                        height: 100%;
+                        position: relative;
+
+                        .carousel-item {
+
+                            // display: flex;
+                            // justify-content: center;
+                            // align-items: center;
+                            // overflow: hidden;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .btn_enter {
+                            width: calc(100% - 3rem);
+                            left: 1.5rem;
+                            right: 1.5rem;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+//0205
+#tutorialReport {
+    .modal-dialog {
+        max-width: 37.5rem;
+
+        @media (max-width: 960px) {
+            max-width: 100%;
+        }
+
+        .modal {
+            overflow: hidden;
+        }
+
+        .modal-content {
+            width: 37.5rem;
+
+            @media (max-width: 960px) {
+                max-width: 100%;
+            }
+
+            .modal-body {
+                padding: 0;
+
+                #carouselExampleCaptions1 {
+                    height: 37.5rem;
+                    position: relative;
+
+                    .carousel-indicators {
+                        pointer-events: none;
+                    }
+
+                    .carousel-item {
+                        // width: 37.5rem;
+                        height: 20rem;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+
+                    .carousel-inner {
+                        // height: 20rem;
+                    }
+
+                    .carousel-inner-text {
+                        // height: 2.5rem;
+                        padding: 1.5rem;
+
+                        .inner_text_title {
+                            color: #363636;
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                        }
+
+                        .inner_text_content {
+                            margin-top: 1rem;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    }
+
+                    .carousel-indicators {
+                        bottom: 4.3rem;
+                    }
+
+                    .carousel-indicators [data-bs-target] {
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        border-radius: 50% !important;
+                        background-color: #E0E0E0;
+                        margin-left: 0.5rem;
+                    }
+
+                    .carousel-indicators .active {
+                        background-color: #FFD631;
+                    }
+
+                    .btn-primary {
+                        right: 1.5rem;
+                        position: absolute;
+                        bottom: 1.5rem;
+                        background-color: #FFD631;
+                        color: #262626 !important;
+                        border: none;
+                        width: 7.5rem;
+                        height: 2.5rem;
+                    }
+
+                    .btn-primary:first-of-type {
+                        left: 1.5rem;
+                        right: unset;
+                        background-color: #FFF;
+                        color: #969696 !important;
+                        border: 1px solid #B9B9B9;
+                    }
+
+                    .btn_enter {
+                        width: 10.5rem;
+                        display: none;
+                    }
+                }
+
+                #carouselBack1 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    #tutorialReport {
+        .modal-dialog {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+            .modal-content {
+                height: 100%;
+                width: 100% !important;
+
+                .modal-body {
+                    #carouselExampleCaptions1 {
                         height: 100%;
                         position: relative;
 
@@ -2314,6 +2469,7 @@ $container-max-widths: (
                 width: 3rem;
             }
         }
+
     }
 
     th {
@@ -2423,6 +2579,7 @@ $container-max-widths: (
 
             .td_report_info {
                 padding: .75rem 0 !important;
+                width: 3rem;
 
                 .report_info {}
 
@@ -2436,6 +2593,7 @@ $container-max-widths: (
                 li {
                     height: 1rem;
                     line-height: 1rem;
+
                 }
             }
 
@@ -2466,6 +2624,111 @@ $container-max-widths: (
 
 
 
+}
+
+.subject_status_div_sp {
+    text-align: center;
+
+    .tr_subject_sp_thead {
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    .td {
+        display: flex;
+        height: 6.75rem;
+        padding: 1rem 0rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+    }
+
+    .tr_subject_sp_tbody {
+        tr {
+            height: 6.75rem;
+
+            th:not(:nth-last-child(2)):not(:last-child) {
+                border: 1rem solid red;
+            }
+
+            .tr_th_center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 6.75rem;
+            }
+        }
+
+
+        .tr_subject_sp_th {
+            height: 6.75rem;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .tr_subject_sp_th_katai {
+            height: 18.25rem;
+        }
+
+        .tr_subject_sp_th_test {
+            height: 12rem;
+        }
+
+        .td_report_info {
+            padding: 1rem 0 !important;
+            width: 3rem;
+            font-size: .75rem;
+
+            ul {
+                li {
+                    height: 1rem;
+                    line-height: 1rem;
+                    list-style: none;
+                }
+            }
+        }
+
+
+
+        .td_SW {
+            background-color: #FFE5BE;
+        }
+
+        .td_SWA {
+            background-color: #FFFDCC;
+        }
+
+        .td_SDO {
+            background-color: #FFD9D8;
+        }
+
+        .ngaku_over_color_icon {
+            background-color: #F3F3F3;
+            padding: 0 .25rem;
+        }
+
+        .ngaku_mikakunin_color_icon {
+            background-color: #FFC977;
+            padding: 0 .25rem;
+        }
+    }
+}
+
+.ngaku_parts_contents_sp {
+    background-color: $bg-white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.ngaku_parts_contents_schooling_sp {
+    .th_style {
+        height: 3rem;
+        padding: 1rem 0;
+    }
 }
 
 .flex-center {
@@ -2517,6 +2780,26 @@ $container-max-widths: (
 
 .ngaku_evaluation {
     padding-top: 1.5rem;
+}
+
+// c0101sp css
+.ngaku_schooling_select_btn {
+    padding: 0.5rem 1rem;
+    background-color: $bg-white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.25rem;
+    border: 1px solid var(--BorderGray-500, #CCC);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: $font-color-graya96;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
 /* D_Css  */

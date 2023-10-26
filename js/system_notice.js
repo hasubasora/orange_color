@@ -218,6 +218,59 @@ $(function () {
       }
     });
 
+    // E_0205
+    $('#tutorialReport').on('shown.bs.modal', function () {
+        $.getJSON('/asset/json/tutorial2.json', function(data) {
+            var $carouselInner = $('#carousel-inner1');
+            $carouselInner.empty();
+            $.each(data, function(index, value) {
+                var carouselItem = $('<div class="carousel-item">');
+                    if (index === 0) {
+                      carouselItem.addClass('active'); // 第一项设置为 active
+                      $('#inner_text_title1').text(value.title);
+                        $('#inner_text_content1').text(value.content);
+                    }
+                    var img = $('<img>').attr('src', value.imgurl).attr('alt', "");
+                    var caption = $('<div class="carousel-caption">').text("");
+                    carouselItem.append(img);
+                    carouselItem.append(caption);
+                        console.log(carouselItem);
+                    $carouselInner.append(carouselItem);
+                  });
+            })
+          
+          .fail(function(jqxhr, textStatus, error) {
+            console.log("An error occurred: " + error);
+          });
+    })
+    $('#tutorialReport').on('hidden.bs.modal', function () {
+        $('#carouselExampleCaptions1').carousel(0);
+      })
+    $('#carouselExampleCaptions1').on('slide.bs.carousel', function(event) {
+      var currentIndex = event.to;
+      $.getJSON('/asset/json/tutorial2.json', function(data) {
+        $.each(data, function(index, value) {
+            if(index === currentIndex) {
+                $('#inner_text_title1').text(value.title);
+                $('#inner_text_content1').text(value.content);
+            }
+        })
+    });
+      if(currentIndex == 0) {
+        $('#carouselBack1').css('display','none');
+        $('#carouselNext1').css('display','inline-block');
+        $('#carouselEnter1').css('display','none');
+      }else if (currentIndex == 3){
+        $('#carouselBack1').css('display','none');
+        $('#carouselNext1').css('display','none');
+        $('#carouselEnter1').css('display','inline-block');
+      }else {
+        $('#carouselBack1').css('display','inline-block');
+        $('#carouselNext1').css('display','inline-block');
+        $('#carouselEnter1').css('display','none');
+      }
+    });
+
 })
 
 // A0001 A0301
@@ -469,15 +522,16 @@ var homepage = {
         screenHeight = $(window).height();
         // メソッドを呼び出して高さとスクロールを設定する
         _this.setScrollHeight($(".ngaku_parts_left_scroll"), screenHeight, 0);
-        _this.setScrollHeight($(".nav_right_scroll"), screenHeight, 40);
-        _this.setScrollHeight($(".announce_list_scroll"), screenHeight, 40);
-        _this.setScrollHeight($("#ngakuvoice_sroll"), screenHeight, 50);
-        _this.setScrollHeight($("#classvoice_scroll"), screenHeight, 50);
+        _this.setScrollHeight($(".nav_right_scroll"), screenHeight, 60);
+        _this.setScrollHeight($(".announce_list_scroll"), screenHeight, 60);
+        _this.setScrollHeight($("#ngakuvoice_sroll"), screenHeight, 60);
+        _this.setScrollHeight($("#classvoice_scroll"), screenHeight, 60);
 
         //マイスタディTAB
-        _this.setScrollHeight($(".report_learning_scroll"), screenHeight, 40);
-        _this.setScrollHeight($("#ngaku_my_qna_div"), screenHeight, 40);
-        _this.setScrollHeight($("#ngaku_schooling_scroll"), screenHeight, 40);
+        _this.setScrollHeight($(".report_learning_scroll"), screenHeight, 60);
+        _this.setScrollHeight($("#ngaku_my_qna_div"), screenHeight, 60);
+        _this.setScrollHeight($("#ngaku_schooling_scroll"), screenHeight, 60);
+        _this.setScrollHeight($(".ngaku_parts_contents_schooling_sp_scroll"), screenHeight, 60);
         
 
     },
