@@ -22,40 +22,39 @@
 <title>nhk-school</title>
 
 <body>
-    <!-- e_0201 チュートリアル_Nチャット（再表示） -->
+    <!-- e_0205_チュートリアル_レポートの流れ（再表示） -->
     <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1810-42061&mode=dev -->
     <div class="modal fade" id="tutorialReport" tabindex="-1" aria-labelledby="tutorialReportLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div id="carouselExampleCaptions1" class="carousel slide" data-bs-wrap="false" data-interval="false">
+                    <div id="carouselReportCaptions" class="carousel slide" data-bs-wrap="false" data-interval="false">
                         <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                          <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#carouselReportCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselReportCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselReportCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselReportCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
                         </div>
                         <div id="carousel-inner1" class="carousel-inner">
                           
                         </div>
                         <div class="carousel-inner-text">
-                            <div id="inner_text_title1" class="inner_text_title">
+                            <div id="inner_text_report_title" class="inner_text_title">
                              
                             </div>
-                            <div id="inner_text_content1" class="inner_text_content">
+                            <div id="inner_text_report_content" class="inner_text_content">
                                
                             </div>
                         </div>
-                        <button id="carouselBack1" class="btn btn-primary" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
+                        <button id="carouseReportlBack" class="btn btn-primary" type="button" data-bs-target="#carouselReportCaptions" data-bs-slide="prev">
                             戻る
                         </button>
-                        <button id="carouselNext1" class="btn btn-primary" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
+                        <button id="carouselReportNext" class="btn btn-primary" type="button" data-bs-target="#carouselReportCaptions" data-bs-slide="next">
                             次へ
                         </button>
-                        <button id="carouselEnter1" class="btn btn-primary btn_enter" type="button" 
+                        <button id="carouselReportEnter" class="btn btn-primary btn_enter" type="button" 
                             data-bs-dismiss="modal"
-                            aria-label="Close"
-                        >
+                            aria-label="Close">
                             マイスタディに入る
                         </button>
                     </div>
@@ -64,9 +63,9 @@
             </div>
         </div>
     </div>
-    <!-- e_0201 チュートリアル_Nチャット（再表示） end -->
+    <!-- e_0205_チュートリアル_レポートの流れ（再表示） end -->
 
-    <!-- PC_E_0205_チュートリアル_レポートの流れ（再表示） -->
+    <!-- e_0201 チュートリアル_Nチャット（再表示） -->
     <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1810-42061&mode=dev -->
     <div class="modal fade" id="tutorialHome" tabindex="-1" aria-labelledby="tutorialHomeLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -109,7 +108,7 @@
             </div>
         </div>
     </div>
-    <!-- PC_E_0205_チュートリアル_レポートの流れ（再表示）end -->
+      <!-- e_0201 チュートリアル_Nチャット（再表示）end -->
 
     <!-- e_0101 ネット特別活動・予定一覧 -->
     <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?node-id=516%3A4443&mode=dev -->
@@ -716,7 +715,10 @@
                                 </li>
                             </ul>
                         </div>
-
+                    <!-- ホームルーム start-->
+                    <div class="ngaku_container" >
+                        <!-- report area start-->
+                        <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=2598-51125&mode=dev -->
                         <div class="pt002_container display_none">
                             <div class="ngaku_parts_header">
                                 <div class="ngaku_parts_header_title margin_right--2">
@@ -787,15 +789,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ngaku_page_layout_center tab-content" id="v-pills-tabContent">
+                        <!-- report area end-->
 
-                            <!-- ホームページ B0101 -->
+                        <div class="ngaku_page_layout_center tab-content" id="v-pills-tabContent">
+                            <!-- ホームルーム B0101 -->
+                            <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=14-572&mode=dev -->
                             <div class="tab-pane fade show active nav_right_scroll" id="v-pills-my_study_report-page"
                                 role="tabpanel" aria-labelledby="ngaku_navi_home_room_tab" tabindex="0">
-
                                 <!-- PT027 NgakuAnnounce & ClassAnnounce -->
                                 <div
-                                    class="ngakuannounce_container ngakuannounce_and_classannounce_container pt027_container ngaku_parts_container display_none d-flex flex-column margin_bottom--8 p-4 ">
+                                    class="ngakuannounce_container ngakuannounce_and_classannounce_container pt027_container ngaku_parts_container display_none d-flex flex-column margin_top_bottom--8 p-4 ">
                                     <div class="">おしらせ
                                         <span class="top-0 start-100 badge rounded-pill bg-danger margin_left--1">
                                             99+
@@ -887,7 +890,7 @@
                                 <!-- クラスのこえ end -->
 
                             </div>
-                            <!-- ホームページ -->
+                            <!-- ホームルーム -->
 
 
                             <!-- マイスタディ C0101-->
@@ -895,7 +898,7 @@
                             <!-- PT027 SubjectAnnounce  -->
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                 aria-labelledby="ngaku_navi_my_study_tab" tabindex="0">
-                                <!-- p2 -->
+                                <!-- MyStudy -->
                                 <div class="subjectannounce_container pt027_container display_none">
                                     <ul class="nav nav-tabs nav-underline ngaku_parts_tab " id="pt014_contents_tab"
                                         role="tablist">
@@ -924,181 +927,177 @@
                                     <!-- Tab panes PT014 -->
                                     <div class="tab-content ngaku_parts_inner_contents display_none">
                                         
-
-
-
                                         <!-- レポート学習 -->
                                         <div class="tab-pane active" id="my_study_report" role="tabpanel"
                                             aria-labelledby="my_study" tabindex="0">
                                             <!-- SP レポート学習 -->
                                             <div class="ngaku_schooling_status_contents  d-lg-none d-xl-none d-xxl-none">
-                                               
-<div class="ngaku_schooling_select padding_top--4">
-    <p>レポート学習をする科目を選択</p>
-    <button type="button"
-        class=" btn-outline-secondary ngaku_schooling_select_btn d-dm-block d-lg-none margin_bottom--4">フィルター
-        <i class="bi bi-chevron-down"></i>
-    </button>
-</div>
-<!-- pt014 -->
-<div class="pt014_container ngaku_parts_contents_sp">
-    <div class="report_learning_scroll">
-        <div id="subject_status_div_sp" class="subject_status_div_sp">
-            <table class="table table-bordered">
-                <thead>
-                    <tr class="tr_subject_sp_thead">
-                        <th style="width: 32.5%;"><div>レポート回</div></th>
-                        <th style="width: 67.5%;"><div>学習状況・評価</div></th>
-                      
-                    </tr>
-                </thead>
-                <tbody class="tr_subject_sp_tbody">
-                    <tr><th class="tr_th_center">1</th>
-                        <td class="td_report_info ">
-                            <ul class="p-0 m-0">
-                                <li><span class="margin_right--2">知</span><span>A</span></li>
-                                <li><span class="margin_right--2">思</span><span>A</span></li>
-                                <li><span class="margin_right--2">態</span><span>A</span></li>
-                                <li class="margin_top--2"><span class="ngaku_over_color_icon">遅れ</span></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">2</th>
-                        <td class="td_report_info td_SW">
-                            <ul class="p-0 m-0">
-                                <li><span class="margin_right--2">知</span><span>A</span></li>
-                                <li><span class="margin_right--2">思</span><span>A</span></li>
-                                <li><span class="margin_right--2">態</span><span>A</span></li>
-                                <li class="margin_top--2"><span class="ngaku_mikakunin_color_icon">未読</span></li>
-                            </ul>
-                        </td>
+                                                <div class="ngaku_schooling_select padding_top--4">
+                                                    <p>レポート学習をする科目を選択</p>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#subject_select_body"
+                                                        class=" btn-outline-secondary ngaku_schooling_select_btn d-dm-block d-lg-none margin_bottom--4">フィルター
+                                                        <i class="bi bi-chevron-down"></i>
+                                                    </button>
+                                                </div>
+                                                <!-- pt014 -->
+                                                <div class="pt014_container ngaku_parts_contents_sp">
+                                                    <div class="report_learning_scroll">
+                                                        <div id="subject_status_div_sp" class="subject_status_div_sp">
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr class="tr_subject_sp_thead">
+                                                                        <th style="width: 32.5%;"><div>レポート回</div></th>
+                                                                        <th style="width: 67.5%;"><div>学習状況・評価</div></th>
+                                                                    
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="tr_subject_sp_tbody">
+                                                                    <tr>
+                                                                        <th class="tr_th_center">1</th>
+                                                                        <td class="td_report_info">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                                <li class="margin_top--2"><span class="ngaku_over_color_icon">遅れ</span></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">2</th>
+                                                                        <td class="td_report_info td_SW">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                                <li class="margin_top--2"><span class="ngaku_mikakunin_color_icon">未読</span></li>
+                                                                            </ul>
+                                                                        </td>
 
-                    </tr>
-                    <tr><th class="tr_th_center">3</th>
-                        <td class="td_report_info ">
-                            <ul class="p-0 m-0">
-                                <li><span class="margin_right--2">知</span><span>A</span></li>
-                                <li><span class="margin_right--2">思</span><span>A</span></li>
-                                <li><span class="margin_right--2">態</span><span>A</span></li>
-                                <li class="margin_top--2"></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">4</th>
-                        <td class="td_report_info td_SDO">
-                            <ul class="p-0 m-0">
-                                <li>8/10</li>
-                                <li>70%</li>
-                                <li>再提出</li>
-                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">5</th>
-                        <td class="td_report_info ">
-                            <ul class="p-0 m-0">
-                                <li>8/10</li>
-                                <li>70%</li>
-                                <li></li>
-                                <li class="margin_top--2"><i class="icon_checkmark bi document--checkmark"></i></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">6</th>
-                        <td class="td_report_info td_SDO">
-                            <ul class="p-0 m-0">
-                                <li>9/10</li>
-                                <li>100%</li>
-                                <li></li>
-                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">7</th>
-                        <td class="td_report_info td_SDO">
-                            <ul class="p-0 m-0">
-                                <li>10/10</li>
-                                <li></li>
-                                <li></li>
-                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">8</th>
-                        <td class="td_report_info td_SWA">
-                            <ul class="p-0 m-0">
-                                <li>10/10</li>
-                                <li>20%</li>
-                                <li></li>
-                                <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill margin_right--2"></i>締切間近</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">9</th>
-                        <td class="td_report_info td_SWA">
-                            <ul class="p-0 m-0">
-                                <li>10/10</li>
-                                <li></li>
-                                <li></li>
-                                <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill margin_right--2"></i>締切間近</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">10</th>
-                    <td class="td_report_info ">
-                            <ul class="p-0 m-0">
-                                <li>10/10</li>
-                                <li>20%</li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">11</th>
-                    <td class="td_report_info ">
-                            <ul class="p-0 m-0">
-                                <li class="font_graya96">10/11</li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr><th class="tr_th_center">12</th><td><div class="p-2">免除</div></td></tr>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">3</th>
+                                                                        <td class="td_report_info ">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li><span class="margin_right--2">知</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">思</span><span>A</span></li>
+                                                                                <li><span class="margin_right--2">態</span><span>A</span></li>
+                                                                                <li class="margin_top--2"></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">4</th>
+                                                                        <td class="td_report_info td_SDO">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>8/10</li>
+                                                                                <li>70%</li>
+                                                                                <li>再提出</li>
+                                                                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">5</th>
+                                                                        <td class="td_report_info ">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>8/10</li>
+                                                                                <li>70%</li>
+                                                                                <li></li>
+                                                                                <li class="margin_top--2"><i class="icon_checkmark bi document--checkmark"></i></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">6</th>
+                                                                        <td class="td_report_info td_SDO">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>9/10</li>
+                                                                                <li>100%</li>
+                                                                                <li></li>
+                                                                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">7</th>
+                                                                        <td class="td_report_info td_SDO">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>10/10</li>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                                <li class="margin_top--2"><i class="icon_red bi bi-exclamation-circle-fill margin_right--2"></i>期限切れ</li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">8</th>
+                                                                        <td class="td_report_info td_SWA">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>10/10</li>
+                                                                                <li>20%</li>
+                                                                                <li></li>
+                                                                                <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill margin_right--2"></i>締切間近</li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">9</th>
+                                                                        <td class="td_report_info td_SWA">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>10/10</li>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                                <li class="margin_top--2"><i class="icon_orange bi bi-exclamation-triangle-fill margin_right--2"></i>締切間近</li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">10</th>
+                                                                    <td class="td_report_info ">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li>10/10</li>
+                                                                                <li>20%</li>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">11</th>
+                                                                    <td class="td_report_info ">
+                                                                            <ul class="p-0 m-0">
+                                                                                <li class="font_graya96">10/11</li>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr><th class="tr_th_center">12</th><td><div class="p-2">免除</div></td></tr>
 
-                    <tr >
-                        <th rowspan="3">
-                            <div class="tr_subject_sp_th tr_subject_sp_th_katai">
-                                特別課題
-                            </div>
-                        </th>
-                        <td>課題</td>
-                    </tr>
-                    <tr>
-                        <td>課題</td>
-                    </tr>
-                    <tr>
-                        <td>課題</td>
-                    </tr>
-                    <tr>
-                        <th rowspan="2">
-                            <div class="tr_subject_sp_th tr_subject_sp_th_test">
-                                定期試験
-                            </div>
-                        </th>
-                        <td>中間</td>
-                    </tr>
-                    <tr>
-                        <td>年度末</td>
-                    </tr>
-                  
-                </tbody>
-            </table>
-        </div>
-    </div>
+                                                                    <tr >
+                                                                        <th rowspan="3">
+                                                                            <div class="tr_subject_sp_th tr_subject_sp_th_katai">
+                                                                                特別課題
+                                                                            </div>
+                                                                        </th>
+                                                                        <td>課題</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>課題</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>課題</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th rowspan="2">
+                                                                            <div class="tr_subject_sp_th tr_subject_sp_th_test">
+                                                                                定期試験
+                                                                            </div>
+                                                                        </th>
+                                                                        <td>中間</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>年度末</td>
+                                                                    </tr>
+                                                                
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
 
-</div>
-                                             
+                                                </div>
                                             </div>
                                             <!--PC レポート学習 -->
                                             <div class="report_learning d-none d-sm-none d-md-none d-lg-block">
@@ -1431,42 +1430,13 @@
                                         <!-- スクーリング・試験結果 -->
                                         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab"
                                             tabindex="0">
-<!-- フィルター ダイヤログ　smartphone-->
-<div class="ngaku_schooling_status_contents_sp" style="height: 95%;
-margin: 0;
-padding: 0;
-position: absolute;z-index: 5;
-top: 0;
-left: 0;
-width: 100%;">
-    <div class="modal-container" style="display: flex;
-    flex-direction: column;
-    height: 100%;">
-        <div class="modal-header" style="height: 100px; 
-        background-color: #333;
-        color: #fff;">
-            <h6 class="text-center">科目を選択してください</h6>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-content" style="flex: 1;
-        background-color: #f2f2f2;
-        padding: 20px;">1</div>
-        <div class="modal-footer" style="height: 100px;
-        background-color: #333;
-        color: #fff;">
-            <button class="ngakuannounce_and_classannounce_radio_smartphone_button" type="button"
-                id="Show_filter_results">結果を表示する</button>
-        </div>
-    </div>
-</div>
 
-<!-- フィルター smartphone end-->
                                             <!-- SP スクーリング出席数 -->
                                             <div
                                                 class="ngaku_schooling_status_contents  d-lg-none d-xl-none d-xxl-none">
                                                     <div class="ngaku_schooling_select padding_top--4">
                                                         <p>スクーリング出席数と試験結果</p>
-                                                        <button type="button"
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#subject_select_body"
                                                             class=" btn-outline-secondary ngaku_schooling_select_btn d-dm-block d-lg-none margin_bottom--4">フィルター
                                                             <i class="bi bi-chevron-down"></i>
                                                         </button>
@@ -1550,67 +1520,42 @@ width: 100%;">
                                                                <table class="table table-bordered schooling_status_table">
                                                                    <thead>
                                                                        <tr>
-                                                                           <th style="width: 26%;"><div class="th_style">月</div></th>
-                                                                           <th style="width: 74%;"><div class="th_style">出席数</div></th>
+                                                                           <th colspan="2" style="width: 50%;"><div class="th_tr_test_style">試験内容</div></th>
+                                                                           <th style="width: 50%;"><div class="th_tr_test_style">評価</div></th>
                                                                        </tr>
                                                                    </thead>
                                                                    <tbody>
-                                                                       <tr>
-                                                                           <td><div class="th_style">4</div></td>
-                                                                           <td><div class="th_style"> </div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">5</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">6</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">7</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">8</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">9</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">10</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">11</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">12</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">2</div></td>
-                                                                           <td><div class="th_style">1</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">3</div></td>
-                                                                           <td><div class="th_style">5</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">合計</div></td>
-                                                                           <td><div class="th_style">5</div></td>
-                                                                       </tr>
-                                                                       <tr>
-                                                                           <td><div class="th_style">必要時間数</div></td>
-                                                                           <td><div class="th_style">10</div></td>
-                                                                       </tr>
+                                                                       <tr><td rowspan="2"><div class="th_tr_test_style">試験</div></td><td><div class="th_tr_test_style">中間試験</div></td><td><div class="th_tr_test_style">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                       </div></td></tr>
+                                                                       <tr><td><div class="th_tr_test_style">年度末試験</div></td><td><div class="th_tr_test_style">
+                                                                        <div class="td-100">100</div>
+                                                                        <ul class="m-0 td-right">
+                                                                            <li>知</li>
+                                                                            <li>思</li>
+                                                                            <li>態</li>
+                                                                        </ul>    
+                                                                        <ul class="m-0 p-0">
+                                                                            <li>40</li>
+                                                                            <li>40</li>
+                                                                            <li>30</li>
+                                                                        </ul>
+                                                                       </div></td></tr>
+                                                                       <tr><td rowspan="2"><div class="th_tr_test_style">実技</div></td><td><div class="th_tr_test_style">1</div></td><td><div class="th_tr_test_style">○</div></td></tr>
+                                                                       <tr><td><div class="th_tr_test_style">2</div></td><td><div class="th_tr_test_style">○</div></td></tr>
+                                                                       <tr><td rowspan="2"><div class="th_tr_test_style">効果測定</div></td><td><div class="th_tr_test_style">1</div></td><td><div class="th_tr_test_style">○</div></td></tr>
+                                                                       <tr><td><div class="th_tr_test_style">2</div></td><td><div class="th_tr_test_style">○</div></td></tr>
+                                                                      
                                                                    </tbody>
                                                                </table>
                                                            </div>
@@ -1941,12 +1886,75 @@ width: 100%;">
                                         <!-- 質問一覧 end-->
                                     </div>
                                 </div>
+                                <!-- MyStudy end  -->
+                    <!--　C0101 先生画面セレクトのところ -->
+                    <!-- https://www.figma.com/file/oAy4Hf2DdaRciMwsJi1g0r/%E5%AD%A6%E7%BF%92%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB?type=design&node-id=1456-34904&mode=dev -->
+                    <div class="ngaku_container" style="display: none;">
+                        <div class="ngaku_schooling_status_contents  d-lg-none d-xl-none d-xxl-none">
+                            <div class="ngaku_schooling_select padding_top--4">
+                                <p>担当科目を選択</p>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#subject_select_body"
+                                    class=" btn-outline-secondary ngaku_schooling_select_btn d-dm-block d-lg-none margin_bottom--4">フィルター
+                                    <i class="bi bi-chevron-down"></i>
+                                </button>
                             </div>
-                            <!-- Nav tabs -->
+
+                            <div class="teacher_scroll">
+                                <div class="ngaku_parts_contents_schooling_sp">
+                                <div id="schooling_status_div_sp" class="ngaku_parts_contents_sp">
+                                    <table class="table table-bordered schooling_status_table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 26%;"><div class="th_style">レポート回</div></th>
+                                                <th style="width: 74%;"><div class="th_style">レポート締め切り</div></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><div class="th_style">1</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">2</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">3</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">4</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">5</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">6</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">7</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">8</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">9</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">10</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">11</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr><td><div class="th_style">12</div></td><td><div class="th_style">12/12</div></td></tr>
+                                            <tr >
+                                                <th rowspan="3">
+                                                    <div class="th_style">
+                                                        特別課題
+                                                    </div>
+                                                </th>
+                                                <td><div class="th_style">12/12</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="th_style">12/12</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="th_style">12/12</div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                               
+                            </div>
+                      
+                    </div>
+                    </div>
+                     <!-- C0101　先生画面セレクトのところ -->
+                            </div> <!-- Nav tabs end-->
+                           
 
                             <!-- マイスタディ end *******************************************************************-->
 
                         </div>
+                    </div> <!-- ngaku_container end-->
+                    <!-- ホームルーム  end-->
+
                     </div>
                 </div>
                 <!-- B0301 start-->
@@ -2558,17 +2566,90 @@ width: 100%;">
     </div>
     <!-- 0501_ブリーフィング動画 excess_report modal end-->
 
+    <!-- c0102_科目を選択してください subject_select modal -->
+    <div class="modal fade " id="subject_select_body" tabindex="-1" aria-labelledby="subject_select_body" aria-modal="true" role="dialog" >
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-6 text-center w-100" id="subject_select">科目を選択してください</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="subject_select_body subject_select_body_scroll">
+                    <div class="btn-group-vertical subject_group_add" role="group" aria-label="Vertical radio toggle button group">
+                        <div class="radio_group">
+                            <input type="radio" class="btn-check" name="subject_radio" id="subject_radio1" autocomplete="off">
+                            <label class="btn_subject_select" for="subject_radio1">
+                                <span class="radio-text line_truncate-2">英語コミュニケーションⅠ</span>
+                            </label>
+                        </div>
+                        <div class="radio_group">
+                            <input type="radio" class="btn-check" name="subject_radio" id="subject_radio2" autocomplete="off">
+                            <label class="btn_subject_select" for="subject_radio2">
+                                <span class="radio-text line_truncate-2">言語文化</span>
+                            </label>
+                        </div>
+                        <div class="radio_group">
+                            <input type="radio" class="btn-check" name="subject_radio" id="subject_radio3" autocomplete="off">
+                            <label class="btn_subject_select" for="subject_radio3">
+                                <span class="radio-text line_truncate-2">科目一二三四五六七八九〇一二三四科目一二三四五六七八九〇一二三四</span>
+                            </label>
+                        </div>
+                        <div class="radio_group">
+                            <input type="radio" class="btn-check" name="subject_radio" id="subject_radio3" autocomplete="off">
+                            <label class="btn_subject_select" for="subject_radio3">
+                                <span class="radio-text line_truncate-2">科目一二三四五六七八九〇一二三四科目一二三四五六七八九〇一二三四</span>
+                            </label>
+                        </div>
+                    </div>
+                   
+                </div><!-- subject_select_body -->
+            </div>
+            <div class="modal-footer">
+                <div class="subject_submit d-flex justify-content-center" >
+                    <button class="subject_submit_btn" type="button" data-bs-dismiss="modal" aria-label="Close">結果を表示する</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- c0102_科目を選択してください subject_select modal end-->
+
+
+
+</div>
+
+
+
+
+
+
+
 </body>
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="js/system_notice.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
+        // $('#subject_select_body').modal('show');
+
+        $('[name="subject_radio"]').change(function () {
+  var radioGroup = $(this).closest('.radio_group');
+  var label = radioGroup.find('.btn_subject_select'); 
+  label.addClass('add-danger')
+  var labelsToRemoveClass = radioGroup.siblings('.radio_group').find('label'); 
+
+labelsToRemoveClass.removeClass('add-danger');
+});
+
+
         homepage.init();
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

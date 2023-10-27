@@ -164,111 +164,111 @@ $(function () {
             event.stopPropagation();
         });
     })
-    
+
     // E_0201
     $('#tutorialHome').on('shown.bs.modal', function () {
-        $.getJSON('/asset/json/tutorial1.json', function(data) {
+        $.getJSON('/asset/json/tutorial1.json', function (data) {
             var $carouselInner = $('#carousel-inner');
             $carouselInner.empty();
-            $.each(data, function(index, value) {
+            $.each(data, function (index, value) {
                 var carouselItem = $('<div class="carousel-item">');
-                    if (index === 0) {
-                      carouselItem.addClass('active'); // 第一项设置为 active
-                      $('#inner_text_title').text(value.title);
-                        $('#inner_text_content').text(value.content);
-                    }
-                    var img = $('<img>').attr('src', value.imgurl).attr('alt', "");
-                    var caption = $('<div class="carousel-caption">').text("");
-                    carouselItem.append(img);
-                    carouselItem.append(caption);
-                        console.log(carouselItem);
-                    $carouselInner.append(carouselItem);
-                  });
-            })
-          
-          .fail(function(jqxhr, textStatus, error) {
-            console.log("An error occurred: " + error);
-          });
+                if (index === 0) {
+                    carouselItem.addClass('active'); // 第一项设置为 active
+                    $('#inner_text_title').text(value.title);
+                    $('#inner_text_content').text(value.content);
+                }
+                var img = $('<img>').attr('src', value.imgurl).attr('alt', "");
+                var caption = $('<div class="carousel-caption">').text("");
+                carouselItem.append(img);
+                carouselItem.append(caption);
+                console.log(carouselItem);
+                $carouselInner.append(carouselItem);
+            });
+        })
+
+            .fail(function (jqxhr, textStatus, error) {
+                console.log("An error occurred: " + error);
+            });
     })
     $('#tutorialHome').on('hidden.bs.modal', function () {
         $('#carouselExampleCaptions').carousel(0);
-      })
-    $('#carouselExampleCaptions').on('slide.bs.carousel', function(event) {
-      var currentIndex = event.to;
-      $.getJSON('/asset/json/tutorial1.json', function(data) {
-        $.each(data, function(index, value) {
-            if(index === currentIndex) {
-                $('#inner_text_title').text(value.title);
-                $('#inner_text_content').text(value.content);
-            }
-        })
-    });
-      if(currentIndex == 0) {
-        $('#carouselBack').css('display','none');
-        $('#carouselNext').css('display','inline-block');
-        $('#carouselEnter').css('display','none');
-      }else if (currentIndex == 3){
-        $('#carouselBack').css('display','none');
-        $('#carouselNext').css('display','none');
-        $('#carouselEnter').css('display','inline-block');
-      }else {
-        $('#carouselBack').css('display','inline-block');
-        $('#carouselNext').css('display','inline-block');
-        $('#carouselEnter').css('display','none');
-      }
+    })
+    $('#carouselExampleCaptions').on('slide.bs.carousel', function (event) {
+        var currentIndex = event.to;
+        $.getJSON('/asset/json/tutorial1.json', function (data) {
+            $.each(data, function (index, value) {
+                if (index === currentIndex) {
+                    $('#inner_text_title').text(value.title);
+                    $('#inner_text_content').text(value.content);
+                }
+            })
+        });
+        if (currentIndex == 0) {
+            $('#carouselBack').css('display', 'none');
+            $('#carouselNext').css('display', 'inline-block');
+            $('#carouselEnter').css('display', 'none');
+        } else if (currentIndex == 3) {
+            $('#carouselBack').css('display', 'none');
+            $('#carouselNext').css('display', 'none');
+            $('#carouselEnter').css('display', 'inline-block');
+        } else {
+            $('#carouselBack').css('display', 'inline-block');
+            $('#carouselNext').css('display', 'inline-block');
+            $('#carouselEnter').css('display', 'none');
+        }
     });
 
     // E_0205
     $('#tutorialReport').on('shown.bs.modal', function () {
-        $.getJSON('/asset/json/tutorial2.json', function(data) {
+        $.getJSON('/asset/json/tutorial2.json', function (data) {
             var $carouselInner = $('#carousel-inner1');
             $carouselInner.empty();
-            $.each(data, function(index, value) {
+            $.each(data, function (index, value) {
                 var carouselItem = $('<div class="carousel-item">');
-                    if (index === 0) {
-                      carouselItem.addClass('active'); // 第一项设置为 active
-                      $('#inner_text_title1').text(value.title);
-                        $('#inner_text_content1').text(value.content);
-                    }
-                    var img = $('<img>').attr('src', value.imgurl).attr('alt', "");
-                    var caption = $('<div class="carousel-caption">').text("");
-                    carouselItem.append(img);
-                    carouselItem.append(caption);
-                        console.log(carouselItem);
-                    $carouselInner.append(carouselItem);
-                  });
-            })
-          
-          .fail(function(jqxhr, textStatus, error) {
-            console.log("An error occurred: " + error);
-          });
+                if (index === 0) {
+                    carouselItem.addClass('active'); // 第一项设置为 active
+                    $('#inner_text_report_title').text(value.title);
+                    $('#inner_text_report_content').text(value.content);
+                }
+                var img = $('<img>').attr('src', value.imgurl).attr('alt', "");
+                var caption = $('<div class="carousel-caption">').text("");
+                carouselItem.append(img);
+                carouselItem.append(caption);
+                console.log(carouselItem);
+                $carouselInner.append(carouselItem);
+            });
+        })
+
+            .fail(function (jqxhr, textStatus, error) {
+                console.log("An error occurred: " + error);
+            });
     })
     $('#tutorialReport').on('hidden.bs.modal', function () {
-        $('#carouselExampleCaptions1').carousel(0);
-      })
-    $('#carouselExampleCaptions1').on('slide.bs.carousel', function(event) {
-      var currentIndex = event.to;
-      $.getJSON('/asset/json/tutorial2.json', function(data) {
-        $.each(data, function(index, value) {
-            if(index === currentIndex) {
-                $('#inner_text_title1').text(value.title);
-                $('#inner_text_content1').text(value.content);
-            }
-        })
-    });
-      if(currentIndex == 0) {
-        $('#carouselBack1').css('display','none');
-        $('#carouselNext1').css('display','inline-block');
-        $('#carouselEnter1').css('display','none');
-      }else if (currentIndex == 3){
-        $('#carouselBack1').css('display','none');
-        $('#carouselNext1').css('display','none');
-        $('#carouselEnter1').css('display','inline-block');
-      }else {
-        $('#carouselBack1').css('display','inline-block');
-        $('#carouselNext1').css('display','inline-block');
-        $('#carouselEnter1').css('display','none');
-      }
+        $('#carouselReportCaptions').carousel(0);
+    })
+    $('#carouselReportCaptions').on('slide.bs.carousel', function (event) {
+        var currentIndex = event.to;
+        $.getJSON('/asset/json/tutorial2.json', function (data) {
+            $.each(data, function (index, value) {
+                if (index === currentIndex) {
+                    $('#inner_text_report_title').text(value.title);
+                    $('#inner_text_report_content').text(value.content);
+                }
+            })
+        });
+        if (currentIndex == 0) {
+            $('#carouseReportlBack').css('display', 'none');
+            $('#carouselReportNext').css('display', 'inline-block');
+            $('#carouselReportEnter').css('display', 'none');
+        } else if (currentIndex == 3) {
+            $('#carouseReportlBack').css('display', 'none');
+            $('#carouselReportNext').css('display', 'none');
+            $('#carouselReportEnter').css('display', 'inline-block');
+        } else {
+            $('#carouseReportlBack').css('display', 'inline-block');
+            $('#carouselReportNext').css('display', 'inline-block');
+            $('#carouselReportEnter').css('display', 'none');
+        }
     });
 
 })
@@ -517,6 +517,18 @@ var homepage = {
         for (let index = 0; index < 6; index++) {
             $('.ngakuvoice').append(html6)
         }
+
+
+
+        var html7 = ` <div class="radio_group">
+        <input type="radio" class="btn-check" name="subject_radio" id="subject_radio3" autocomplete="off">
+        <label class="btn_subject_select" for="subject_radio3">
+            <span class="radio-text line_truncate-2">科目一二三四五六七八九〇一二三四科目一二三四五六七八九〇一二三四</span>
+        </label>
+    </div>`
+        for (let index = 0; index < 6; index++) {
+            $('.subject_group_add').append(html7)
+        }
     },
     updateDivHeight: function () {//b0101 c0101
         screenHeight = $(window).height();
@@ -532,7 +544,9 @@ var homepage = {
         _this.setScrollHeight($("#ngaku_my_qna_div"), screenHeight, 60);
         _this.setScrollHeight($("#ngaku_schooling_scroll"), screenHeight, 60);
         _this.setScrollHeight($(".ngaku_parts_contents_schooling_sp_scroll"), screenHeight, 60);
-        
+        _this.setScrollHeight($(".subject_select_body_scroll"), screenHeight, 100);
+        _this.setScrollHeight($(".teacher_scroll"), screenHeight, 60);
+
 
     },
     setScrollHeight: function ($element, screenHeight, buffer) {

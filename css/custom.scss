@@ -1469,7 +1469,7 @@ $container-max-widths: (
             .modal-body {
                 padding: 0;
 
-                #carouselExampleCaptions1 {
+                #carouselReportCaptions {
                     height: 37.5rem;
                     position: relative;
 
@@ -1569,7 +1569,7 @@ $container-max-widths: (
                 width: 100% !important;
 
                 .modal-body {
-                    #carouselExampleCaptions1 {
+                    #carouselReportCaptions {
                         height: 100%;
                         position: relative;
 
@@ -2728,7 +2728,17 @@ $container-max-widths: (
     .th_style {
         height: 3rem;
         padding: 1rem 0;
+        font-size: .75rem;
     }
+}
+
+.th_tr_test_style {
+    height: 5.5rem;
+    padding: 1rem 0;
+    font-size: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-center {
@@ -2801,6 +2811,66 @@ $container-max-widths: (
     user-select: none;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
+
+//select
+.btn-group-vertical {
+    .radio_group:first-child {
+        border-top: solid 1px #CCC;
+
+    }
+}
+
+.radio_group {
+    position: relative;
+    width: 100%;
+    border-bottom: solid 1px #CCC;
+
+    .btn_subject_select {
+        width: 100%;
+        padding: 1.25rem 1rem 1.25rem 2.5rem;
+    }
+
+    .add-danger {
+        background-color: #FFF5CB;
+    }
+
+    .add-danger::before {
+        content: "\2713";
+        margin-left: 5px;
+        position: absolute;
+        left: 1rem;
+
+    }
+}
+
+
+
+.subject_submit {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    left: 0;
+    padding: 1.25rem 1rem;
+
+    .subject_submit_btn {
+        background-color: $bg-button-yellow;
+        border-radius: 5px;
+        border: 0;
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1rem;
+        padding: .5rem;
+    }
+
+}
+
+.subject_group_add {
+    width: 100%;
+}
+
+
 
 /* D_Css  */
 /* E_Css  */
